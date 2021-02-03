@@ -20,7 +20,7 @@ struct Search: View {
           // this only applies to big titles
           appearance.largeTitleTextAttributes = [
               .font : UIFont.systemFont(ofSize: 20),
-              NSAttributedString.Key.foregroundColor : UIColor.white
+              NSAttributedString.Key.foregroundColor : UIColor.black
           ]
           // this only applies to small titles
           appearance.titleTextAttributes = [
@@ -107,7 +107,7 @@ struct Search: View {
               }.background(Color.white)
                .cornerRadius(25)
               .padding(.horizontal, 20.0)
-               .frame(minHeight: 600)
+               .frame(minHeight: 650)
             }
         }
           .navigationBarTitle("Search", displayMode: .inline)
