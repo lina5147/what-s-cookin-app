@@ -10,13 +10,40 @@ import SwiftUI
 struct Search: View {
       @State private var ingredients = [String]()
       @State private var text = ""
+  
+  init() {
+          let appearance = UINavigationBarAppearance()
+
+          // this overrides everything you have set up earlier.
+          appearance.configureWithTransparentBackground()
+
+          // this only applies to big titles
+          appearance.largeTitleTextAttributes = [
+              .font : UIFont.systemFont(ofSize: 20),
+              NSAttributedString.Key.foregroundColor : UIColor.white
+          ]
+          // this only applies to small titles
+          appearance.titleTextAttributes = [
+              .font : UIFont.systemFont(ofSize: 25),
+              NSAttributedString.Key.foregroundColor : UIColor.black
+          ]
+
+          //In the following two lines you make sure that you apply the style for good
+          UINavigationBar.appearance().scrollEdgeAppearance = appearance
+          UINavigationBar.appearance().standardAppearance = appearance
+
+          // This property is not present on the UINavigationBarAppearance
+          // object for some reason and you have to leave it til the end
+          UINavigationBar.appearance().tintColor = .white
+
+      }
     
       var body: some View {
         NavigationView{
+
           ZStack {
             Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
             ScrollView{
-            VStack {
               VStack{
                 Text("Let's Explore!").font(.title2).padding(.top, 11.0)
                 Text("Add ingredients to the ingredients list. When you are ready to see what recipes we have for the ingredients you have listed, tap on search for recipes.")
@@ -79,11 +106,11 @@ struct Search: View {
                 }.padding(.bottom)
               }.background(Color.white)
                .cornerRadius(25)
-               .padding(.horizontal, 25.0)
+              .padding(.horizontal, 20.0)
                .frame(minHeight: 600)
-            }.navigationTitle("Search")
-          }
+            }
         }
+          .navigationBarTitle("Search", displayMode: .inline)
       }
     }
     

@@ -32,17 +32,27 @@ struct SearchResults: View {
   @State var recipes = [Recipe]()
     var body: some View {
       NavigationView {
-        List(recipes, id: \.id) { item in
-          VStack(alignment: .leading) {
-            Text(item.title)
-            Text(item.image)
-            Text(item.additionalIngredients[0].name)
-          }
-        }
-        .onAppear(perform: loadData)
-        .navigationTitle("Search Results")
-      }
+        ZStack {
+          Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
+          ScrollView {
+            VStack {
+                ForEach(recipes, id: \.id) { item in
+                    VStack{
+                    Text(item.title)
+                    Text(item.image)
+                    Text(item.additionalIngredients[0].name)
+                    }
+                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 400)
+                  .background(Color.white)
+                  .cornerRadius(10)
+                  .padding(.bottom, 10.0)
+                  .padding(.horizontal, 20.0)
 
+            }
+          }.onAppear(perform: loadData)
+          .navigationTitle("Search Results")
+        }
+      }
     }
   
   func loadData() {
