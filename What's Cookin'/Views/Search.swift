@@ -34,23 +34,30 @@ struct Search: View {
                       .padding(.trailing, 10)
                   }
                 }
-                Text("Ingredients List:").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                Text("Ingredients List:").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).padding(.bottom, 1)
                 Section {
                     ForEach(ingredients, id: \.self) { ingredient in
+                      Section {
                       HStack {
-                        Text(ingredient)
-                            .font(.title2)
-                            .padding()
-                        Spacer()
                         Button(action: {
                           self.deleteIngredient(ingredient: ingredient)
                         }){
+                        Text(ingredient)
+                            .font(.title2)
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 40)
+                            .foregroundColor(Color.black)
+                          Spacer()
                           Image(systemName: "multiply.circle")
-                            .font(.title)
-                            .foregroundColor(.red)
-                            .padding(.trailing, 10)
-                        }
+                                    .font(.title)
+                                    .foregroundColor(.red)
+                                    .padding(.trailing, 10)
+                        }.background(Color.yellow.opacity(0.3))
+                         .cornerRadius(25)
+                         .padding(.bottom, 1.0)
+                         .padding(.horizontal, 10.0)
+                        
                       }
+                    }
                   }
                 }
                 Spacer()
