@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Search: View {
       @State private var ingredients = [String]()
-      @State private var ingredient = ""
+      @State private var text = ""
     
       var body: some View {
         NavigationView{
@@ -20,58 +20,53 @@ struct Search: View {
               VStack{
                 Text("Let's Explore!").font(.title2).padding(.top, 11.0)
                 Text("Add ingredients to the ingredients list. When you are ready to see what recipes we have for the ingredients you have listed, tap on search for recipes.")
-                  .font(.title3)
-                  .multilineTextAlignment(.center)
-                  .padding(.horizontal, 16.0).padding(.top, 3.0)
+                    .font(.title3)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 16.0).padding(.top, 3.0)
                 HStack {
-                  TextField("Enter Ingredient", text: $ingredient)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .multilineTextAlignment(TextAlignment.center)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .padding()
+                  IngredientBar(text: $text).padding(.vertical)
                   Button(action: {
                     self.addIngredient()
-                  }) {Image(systemName: "plus")
-                    .font(.largeTitle)
-                    .foregroundColor(.blue)}
+                  }) {
+                    Image(systemName: "plus.circle.fill")
+                      .font(.title)
+                      .foregroundColor(.gray)
+                      .padding(.trailing, 10)
+                  }
                 }
-                Text("Ingredients List:")
-                  .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
-                Section() {
+                Text("Ingredients List:").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                Section {
                     ForEach(ingredients, id: \.self) { ingredient in
                       HStack {
                         Text(ingredient)
-                          .font(.title2)
-                          .padding()
+                            .font(.title2)
+                            .padding()
                         Spacer()
                         Button(action: {
                           self.deleteIngredient(ingredient: ingredient)
                         }){
                           Image(systemName: "trash")
-                            .font(.title2)
-                            .padding(10.0)
-                            .foregroundColor(.white)
-                            .background(Color.red)
-                            .cornerRadius(40)
+                              .font(.title2)
+                              .padding(10.0)
+                              .foregroundColor(.white)
+                              .background(Color.red)
+                              .cornerRadius(40)
                         }
                       }
-                    }
+                  }
                 }
                 Spacer()
                 HStack(alignment: .bottom){
                     Button(action: {
                       ingredients = [String]()
-                      ingredient = ""
+                      text = ""
                     }){
                       Text("Clear")
-                        .font(.title2)
-                        .frame(width: 160, height: 50)
-                        .foregroundColor(Color.black)
-                        .background(Color.white)
-                        .border(Color.yellow.opacity(0.6), width: 5)
-                        .cornerRadius(10)
-
-                        
+                          .font(.title2)
+                          .frame(width: 160, height: 50)
+                          .foregroundColor(Color.black)
+                          .border(Color.yellow.opacity(0.6), width: 5)
+                          .cornerRadius(10)
                     }
                   NavigationLink(destination: SearchResults(ingredients: self.$ingredients)) {
                       SearchButton()
@@ -88,10 +83,10 @@ struct Search: View {
       }
     
     func addIngredient() {
-      if ingredient != "" && !ingredients.contains(ingredient.lowercased()) {
-        self.ingredients.append(ingredient.lowercased())
+      if text != "" && !ingredients.contains(text.lowercased()) {
+        self.ingredients.append(text.lowercased())
       }
-      self.ingredient = ""
+      self.text = ""
       print(ingredients)
     }
     
