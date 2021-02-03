@@ -10,8 +10,9 @@ import SwiftUI
 struct SearchButton: View {
     var body: some View {
       Text("Search for Recipes")
-        .frame(width: 200, height: 50)
-        .background(Color.yellow)
+        .font(.body)
+        .frame(width: 160, height: 50)
+        .background(Color.yellow.opacity(0.6))
         .foregroundColor(Color.black)
         .cornerRadius(10)
     }

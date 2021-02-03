@@ -31,14 +31,18 @@ struct SearchResults: View {
   @Binding var ingredients: [String]
   @State var recipes = [Recipe]()
     var body: some View {
-      List(recipes, id: \.id) { item in
-        VStack(alignment: .leading) {
-          Text(item.title)
-          Text(item.image)
-          Text(item.additionalIngredients[0].name)
+      NavigationView {
+        List(recipes, id: \.id) { item in
+          VStack(alignment: .leading) {
+            Text(item.title)
+            Text(item.image)
+            Text(item.additionalIngredients[0].name)
+          }
         }
+        .onAppear(perform: loadData)
+        .navigationTitle("Search Results")
       }
-      .onAppear(perform: loadData)
+
     }
   
   func loadData() {
