@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
 //  init(){
 //      UITableView.appearance().backgroundColor = .clear
@@ -50,9 +51,18 @@ struct ContentView: View {
               }
           }
           Section {
-              Button(action: {}){
+              Button(action: {
+                ingredients = [String]()
+                ingredient = ""
+              }){
                 Text("Clear")
               }
+            //https://stackoverflow.com/questions/57130866/how-to-show-navigationlink-as-a-button-in-swiftui
+            
+//            NavigationLink(destination: WorkoutDetail(workout: workout)) {
+//              WorkoutRow(workout: workout)
+//            }
+//            .buttonStyle(ButtonStyle3D(background: Color.yellow))
               Button(action: {}){
                 Text("Search for Recipes")
               }

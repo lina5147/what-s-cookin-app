@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1B6D7D25CA24CD00C8CB28 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B6D7C25CA24CD00C8CB28 /* SearchResults.swift */; };
 		4A42473325C8E2B100E750CB /* What_s_Cookin_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A42473225C8E2B100E750CB /* What_s_Cookin_App.swift */; };
 		4A42473525C8E2B100E750CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A42473425C8E2B100E750CB /* ContentView.swift */; };
 		4A42473725C8E2B400E750CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A42473625C8E2B400E750CB /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A1B6D7C25CA24CD00C8CB28 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		4A42472F25C8E2B100E750CB /* What's Cookin'.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Cookin'.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A42473225C8E2B100E750CB /* What_s_Cookin_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = What_s_Cookin_App.swift; sourceTree = "<group>"; };
 		4A42473425C8E2B100E750CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		4A42473125C8E2B100E750CB /* What's Cookin' */ = {
 			isa = PBXGroup;
 			children = (
+				4A1B6D7C25CA24CD00C8CB28 /* SearchResults.swift */,
 				4A42473225C8E2B100E750CB /* What_s_Cookin_App.swift */,
 				4A42473425C8E2B100E750CB /* ContentView.swift */,
 				4A42473625C8E2B400E750CB /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A42473525C8E2B100E750CB /* ContentView.swift in Sources */,
+				4A1B6D7D25CA24CD00C8CB28 /* SearchResults.swift in Sources */,
 				4A42473325C8E2B100E750CB /* What_s_Cookin_App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
