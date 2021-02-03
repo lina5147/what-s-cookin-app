@@ -56,16 +56,17 @@ struct Search: View {
                 }){
                   Text("Clear")
                 }
-              //https://stackoverflow.com/questions/57130866/how-to-show-navigationlink-as-a-button-in-swiftui
               
-              NavigationLink(destination: SearchResults()) {
-                Text("Starten")
+              NavigationLink(destination: SearchResults(ingredients: $ingredients)) {
+                Text("Search for Recipes")
               }
-//              .buttonStyle(ButtonStyle3D(background: Color.yellow))
-//                Button(action: {}){
-//                  Text("Search for Recipes")
-//                }
             }
+//            NavigationLink(destination: SearchResults()) {
+//              Text("click")
+//            }.buttonStyle(PlainButtonStyle())
+//            NavigationLink(destination: SearchResults()) {
+//              SearchButton()
+//            }
           }
           .navigationBarTitle("Search")
         }

@@ -28,6 +28,7 @@ struct Ingredients: Codable {
 }
 
 struct SearchResults: View {
+  @Binding var ingredients: [String]
   @State var recipes = [Recipe]()
     var body: some View {
       List(recipes, id: \.id) { item in
@@ -41,7 +42,13 @@ struct SearchResults: View {
     }
   
   func loadData() {
-    guard let url = URL(string: "http://127.0.0.1:5000/search/tomato") else {
+    var ingredientsString = ""
+    for i in self.ingredients {
+      ingredientsString += "\(i),"
+    }
+    
+    print(ingredientsString)
+    guard let url = URL(string: "http://127.0.0.1:5000/search/\(ingredientsString)") else {
         print("Invalid URL")
         return
     }
@@ -64,6 +71,6 @@ struct SearchResults: View {
 
 struct SearchResults_Previews: PreviewProvider {
     static var previews: some View {
-        SearchResults()
+      SearchResults(ingredients: .constant(["tomato"]))
     }
 }
