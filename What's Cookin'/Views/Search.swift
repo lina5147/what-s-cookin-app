@@ -45,12 +45,10 @@ struct Search: View {
                         Button(action: {
                           self.deleteIngredient(ingredient: ingredient)
                         }){
-                          Image(systemName: "trash")
-                              .font(.title2)
-                              .padding(10.0)
-                              .foregroundColor(.white)
-                              .background(Color.red)
-                              .cornerRadius(40)
+                          Image(systemName: "multiply.circle")
+                            .font(.title)
+                            .foregroundColor(.red)
+                            .padding(.trailing, 10)
                         }
                       }
                   }
@@ -68,9 +66,9 @@ struct Search: View {
                           .border(Color.yellow.opacity(0.6), width: 5)
                           .cornerRadius(10)
                     }
-                  NavigationLink(destination: SearchResults(ingredients: self.$ingredients)) {
-                      SearchButton()
-                  }
+                    NavigationLink(destination: SearchResults(ingredients: self.$ingredients)) {
+                        SearchButton()
+                    }
                 }.padding(.bottom)
               }.background(Color.white)
                .cornerRadius(25)
@@ -78,9 +76,9 @@ struct Search: View {
                .frame(minHeight: 600)
             }.navigationTitle("Search")
           }
-          }
         }
       }
+    }
     
     func addIngredient() {
       if text != "" && !ingredients.contains(text.lowercased()) {
