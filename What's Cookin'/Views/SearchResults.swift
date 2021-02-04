@@ -31,6 +31,7 @@ struct Ingredients: Codable, Hashable {
 struct SearchResults: View {
   @Binding var ingredients: [String]
   @State var recipes = [Recipe]()
+  
     var body: some View {
       NavigationView {
         ZStack {
@@ -42,33 +43,36 @@ struct SearchResults: View {
                     VStack {
                       Text(item.title)
                         .padding(.horizontal)
-                        .padding(.top)
+                        .padding(.top, 25.0)
                         .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
                         .multilineTextAlignment(.center)
                       let url = URL(string: item.image)!
                       URLImage(url: url, content: { image in
                           image
-                              .resizable()
-                              .aspectRatio(contentMode: .fit)
+//                              .resizable()
+//                              .aspectRatio(contentMode: .fit)
                               .cornerRadius(15)
                               .padding(.horizontal, 20.0)
                       })
                       Text("Additional Ingredients:").font(.title3).fontWeight(.bold).padding(.vertical, 3.0)
                       ForEach(item.additionalIngredients, id: \.self) { item in
-                        Text(item.name)
+                        Text(item.name).font(.body)
                       }
                       Spacer()
+                      NavigationLink(destination: RecipeDetails(id: item.id, title: item.title, image: item.image)) {
+                          FullRecipeButton()
+                      }.padding(.vertical)
                     }
                     
-                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 400)
+                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
                   .background(Color.white)
                   .cornerRadius(15)
-                  .padding(.top, 10.0)
+                  .padding(.top, 15.0)
                   .padding(.horizontal, 20.0)
 
             }
           }.onAppear(perform: loadData)
-          .navigationBarTitle("Search Results", displayMode: .inline)
+          .navigationBarTitle("Search Results", displayMode: .inline).font(.title2)
         }
       }
     }
@@ -90,7 +94,7 @@ struct SearchResults: View {
         if let decodedResponse = try? JSONDecoder().decode([Recipe].self, from: data) {
           DispatchQueue.main.async {
             self.recipes = decodedResponse
-            print(decodedResponse)
+//            print(decodedResponse)
           }
           return
         }
