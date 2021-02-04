@@ -33,7 +33,7 @@ struct SearchResults: View {
   @State var recipes = [Recipe]()
   
     var body: some View {
-      NavigationView {
+//      NavigationView {
         ZStack {
           Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
           ScrollView {
@@ -73,7 +73,7 @@ struct SearchResults: View {
             }
           }.onAppear(perform: loadData)
           .navigationBarTitle("Search Results", displayMode: .inline).font(.title2)
-        }
+//        }
       }
     }
   

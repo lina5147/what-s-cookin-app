@@ -41,11 +41,12 @@ struct RecipeDetails: View {
               .frame(minWidth: 0, maxWidth: .infinity, minHeight: 700)
           .background(Color.yellow.opacity(0.9))
               .cornerRadius(15)
-              .padding(.top, 50.0)
+              .padding(.top, 18.0)
 
    
         }
       }
+      .navigationBarTitle("Recipe", displayMode: .inline).font(.title2)
     }
 }
 

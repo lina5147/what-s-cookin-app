@@ -11,6 +11,7 @@ struct Search: View {
       @State private var ingredients = [String]()
       @State private var text = ""
   
+  
   init() {
           let appearance = UINavigationBarAppearance()
 
@@ -37,9 +38,11 @@ struct Search: View {
           UINavigationBar.appearance().tintColor = .white
 
       }
+  
     
       var body: some View {
         NavigationView{
+          
 
           ZStack {
             Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
@@ -56,8 +59,8 @@ struct Search: View {
                     self.addIngredient()
                   }) {
                     Image(systemName: "plus.circle.fill")
-                      .font(.title)
-                      .foregroundColor(.gray)
+                      .font(.largeTitle)
+                      .foregroundColor(.blue)
                       .padding(.trailing, 10)
                   }
                 }
@@ -79,7 +82,7 @@ struct Search: View {
                                     .foregroundColor(.red)
                                     .padding(.trailing, 10)
                         }.background(Color.yellow.opacity(0.3))
-                         .cornerRadius(25)
+                         .cornerRadius(10)
                          .padding(.bottom, 1.0)
                          .padding(.horizontal, 10.0)
                         
@@ -111,6 +114,7 @@ struct Search: View {
             }
         }
           .navigationBarTitle("Search", displayMode: .inline)
+          
       }
     }
     
@@ -119,13 +123,13 @@ struct Search: View {
         self.ingredients.append(text.lowercased())
       }
       self.text = ""
-      print(ingredients)
+//      print(ingredients)
     }
     
     func deleteIngredient(ingredient: String) {
-      print(ingredient)
+//      print(ingredient)
       ingredients = ingredients.filter(){$0 != ingredient}
-      print(ingredients)
+//      print(ingredients)
     }
 }
 
