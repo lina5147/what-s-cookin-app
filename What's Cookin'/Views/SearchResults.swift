@@ -10,23 +10,23 @@ import SwiftUI
 import URLImage
 
 struct Recipe: Codable, Identifiable, Hashable {
-  enum CodingKeys: String, CodingKey {
-      case id
-      case title
-      case image
-      case additionalIngredients = "missedIngredients"
-  }
+//  enum CodingKeys: String, CodingKey {
+//      case id
+//      case title
+//      case image
+//      case additionalIngredients = "missedIngredients"
+//  }
   
   var id: Int
   var title: String
   var image: String
-  var additionalIngredients: [Ingredients]
+  var additionalIngredients: [String]
 
 }
 
-struct Ingredients: Codable, Hashable {
-  var name: String
-}
+//struct Ingredients: Codable, Hashable {
+//  var name: String
+//}
 
 struct SearchResults: View {
   @Binding var ingredients: [String]
@@ -56,7 +56,7 @@ struct SearchResults: View {
                       })
                       Text("Additional Ingredients:").font(.title3).fontWeight(.bold).padding(.vertical, 3.0)
                       ForEach(item.additionalIngredients, id: \.self) { item in
-                        Text(item.name).font(.body)
+                        Text(item).font(.body)
                       }
                       Spacer()
                       NavigationLink(destination: RecipeDetails(id: item.id, title: item.title, image: item.image)) {
@@ -107,6 +107,6 @@ struct SearchResults: View {
 
 struct SearchResults_Previews: PreviewProvider {
     static var previews: some View {
-      SearchResults(ingredients: .constant(["tomato"]))
+      SearchResults(ingredients: .constant(["tomato", "chicken", "carrot"]))
     }
 }
