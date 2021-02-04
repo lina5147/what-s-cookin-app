@@ -73,7 +73,16 @@ struct SearchResults: View {
                   .padding(.horizontal, 20.0)
               }}.onAppear(perform: loadData)
             if anyRecipes == false {
-              Text("Unable to find any recipes....")
+              VStack {
+                Text("No results found...")
+//                Text("Suggestions:")
+//                Text("- Make sure all ingredients are spelled correctly")
+//                Text("- Check to make sure ingredients are added to the list")
+              }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
+              .background(Color.white)
+              .cornerRadius(15)
+              .padding(.top, 15.0)
+              .padding(.horizontal, 20.0)
             }
           }
           .navigationBarTitle("Search Results", displayMode: .inline).font(.title2)
