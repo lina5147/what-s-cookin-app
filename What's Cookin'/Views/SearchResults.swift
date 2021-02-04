@@ -7,8 +7,9 @@
 
 
 import SwiftUI
+import URLImage
 
-struct Recipe: Codable {
+struct Recipe: Codable, Identifiable, Hashable {
   enum CodingKeys: String, CodingKey {
       case id
       case title
@@ -23,7 +24,7 @@ struct Recipe: Codable {
 
 }
 
-struct Ingredients: Codable {
+struct Ingredients: Codable, Hashable {
   var name: String
 }
 
@@ -37,20 +38,37 @@ struct SearchResults: View {
           ScrollView {
             VStack {
                 ForEach(recipes, id: \.id) { item in
-                    VStack{
-                    Text(item.title)
-                    Text(item.image)
-                    Text(item.additionalIngredients[0].name)
+
+                    VStack {
+                      Text(item.title)
+                        .padding(.horizontal)
+                        .padding(.top)
+                        .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                        .multilineTextAlignment(.center)
+                      let url = URL(string: item.image)!
+                      URLImage(url: url, content: { image in
+                          image
+                              .resizable()
+                              .aspectRatio(contentMode: .fit)
+                              .cornerRadius(15)
+                              .padding(.horizontal, 20.0)
+                      })
+                      Text("Additional Ingredients:").font(.title3).fontWeight(.bold).padding(.vertical, 3.0)
+                      ForEach(item.additionalIngredients, id: \.self) { item in
+                        Text(item.name)
+                      }
+                      Spacer()
                     }
+                    
                 }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 400)
                   .background(Color.white)
-                  .cornerRadius(10)
-                  .padding(.bottom, 10.0)
+                  .cornerRadius(15)
+                  .padding(.top, 10.0)
                   .padding(.horizontal, 20.0)
 
             }
           }.onAppear(perform: loadData)
-          .navigationTitle("Search Results")
+          .navigationBarTitle("Search Results", displayMode: .inline)
         }
       }
     }

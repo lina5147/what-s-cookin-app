@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		4A42473525C8E2B100E750CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A42473425C8E2B100E750CB /* ContentView.swift */; };
 		4A42473725C8E2B400E750CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A42473625C8E2B400E750CB /* Assets.xcassets */; };
 		4A42473A25C8E2B400E750CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A42473925C8E2B400E750CB /* Preview Assets.xcassets */; };
+		4A60509025CB852400EACCFF /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A60508F25CB852400EACCFF /* URLImage */; };
+		4A60509325CB940E00EACCFF /* AdditionalIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60509225CB940E00EACCFF /* AdditionalIngredients.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,7 @@
 		4A42473625C8E2B400E750CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A42473925C8E2B400E750CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A42473B25C8E2B400E750CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A60509225CB940E00EACCFF /* AdditionalIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalIngredients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A60509025CB852400EACCFF /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +59,7 @@
 			children = (
 				4A1B6D8025CA2E9400C8CB28 /* Search.swift */,
 				4A1B6D7C25CA24CD00C8CB28 /* SearchResults.swift */,
+				4A60509225CB940E00EACCFF /* AdditionalIngredients.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +118,9 @@
 			dependencies = (
 			);
 			name = "What's Cookin'";
+			packageProductDependencies = (
+				4A60508F25CB852400EACCFF /* URLImage */,
+			);
 			productName = "What's Cookin'";
 			productReference = 4A42472F25C8E2B100E750CB /* What's Cookin'.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +148,9 @@
 				Base,
 			);
 			mainGroup = 4A42472625C8E2B100E750CB;
+			packageReferences = (
+				4A60508E25CB852400EACCFF /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 4A42473025C8E2B100E750CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,6 +180,7 @@
 				4A1B6D8625CA314D00C8CB28 /* SearchButton.swift in Sources */,
 				4A42473525C8E2B100E750CB /* ContentView.swift in Sources */,
 				4A1B6D8C25CB0E0A00C8CB28 /* IngredientBar.swift in Sources */,
+				4A60509325CB940E00EACCFF /* AdditionalIngredients.swift in Sources */,
 				4A1B6D8125CA2E9400C8CB28 /* Search.swift in Sources */,
 				4A1B6D7D25CA24CD00C8CB28 /* SearchResults.swift in Sources */,
 				4A42473325C8E2B100E750CB /* What_s_Cookin_App.swift in Sources */,
@@ -360,6 +372,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A60508E25CB852400EACCFF /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A60508F25CB852400EACCFF /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A60508E25CB852400EACCFF /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A42472725C8E2B100E750CB /* Project object */;
 }
