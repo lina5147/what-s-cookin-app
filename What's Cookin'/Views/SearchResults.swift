@@ -31,6 +31,7 @@ struct Recipe: Codable, Identifiable, Hashable {
 struct SearchResults: View {
   @Binding var ingredients: [String]
   @State var recipes = [Recipe]()
+  @State var anyRecipes = true
   
     var body: some View {
 //      NavigationView {
@@ -38,6 +39,7 @@ struct SearchResults: View {
           Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
           ScrollView {
             VStack {
+              if !recipes.isEmpty {
                 ForEach(recipes, id: \.id) { item in
 
                     VStack {
@@ -69,15 +71,21 @@ struct SearchResults: View {
                   .cornerRadius(15)
                   .padding(.top, 15.0)
                   .padding(.horizontal, 20.0)
-
+              }}.onAppear(perform: loadData)
+            if anyRecipes == false {
+              Text("Unable to find any recipes....")
             }
-          }.onAppear(perform: loadData)
+          }
           .navigationBarTitle("Search Results", displayMode: .inline).font(.title2)
 //        }
       }
     }
   
   func loadData() {
+    if ingredients.isEmpty {
+      anyRecipes = false
+      return
+    }
     var ingredientsString = ""
     for i in self.ingredients {
       ingredientsString += "\(i),"
@@ -94,7 +102,12 @@ struct SearchResults: View {
         if let decodedResponse = try? JSONDecoder().decode([Recipe].self, from: data) {
           DispatchQueue.main.async {
             self.recipes = decodedResponse
-//            print(decodedResponse)
+            if recipes.isEmpty {
+              anyRecipes = false
+            } else {
+              anyRecipes = true
+            }
+            print(decodedResponse)
           }
           return
         }
