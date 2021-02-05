@@ -34,7 +34,6 @@ struct SearchResults: View {
   @State var anyRecipes = true
   
     var body: some View {
-//      NavigationView {
         ZStack {
           Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
           ScrollView {
@@ -86,7 +85,6 @@ struct SearchResults: View {
             }
           }
           .navigationBarTitle("Search Results", displayMode: .inline).font(.title2)
-//        }
       }
     }
   
@@ -101,7 +99,7 @@ struct SearchResults: View {
     }
     
     print(ingredientsString)
-    guard let url = URL(string: "http://127.0.0.1:5000/search/\(ingredientsString)") else {
+    guard let url = URL(string: "http://127.0.0.1:5000/search?ingredients=\(ingredientsString)") else {
         print("Invalid URL")
         return
     }
@@ -116,7 +114,7 @@ struct SearchResults: View {
             } else {
               anyRecipes = true
             }
-            print(decodedResponse)
+//            print(decodedResponse)
           }
           return
         }
