@@ -34,18 +34,40 @@ struct RecipeDetails: View {
                       .aspectRatio(contentMode: .fit)
               })
               Text(title)
-                  .padding(.horizontal)
-                  .padding(.top, 25.0)
-                  .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
-                  .multilineTextAlignment(.center)
-                Section {
-                  Text(extraDetails.first?.ingredients[0] ?? "")
-                  ForEach(extraDetails, id: \.self) { item in
-                    ForEach(item.ingredients, id: \.self) { ingredient in
-                      Text(ingredient)
-                    }
+                .padding(.horizontal)
+                .padding(.vertical, 12.0)
+                .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+              
+
+              VStack(alignment: .leading, spacing: 10)  {
+                Text("Ingredients:").font(.title3)
+                ForEach(extraDetails, id: \.self) { item in
+                  ForEach(item.ingredients, id: \.self) { ingredient in
+                    Text(" •  " + ingredient)
+                      .font(.body)
+                      .padding(.horizontal)
+                      .fixedSize(horizontal: false, vertical: true)
                   }
                 }
+              }.frame(width: 350, alignment: .leading)
+              .background(Color.gray.opacity(0.1))
+              
+              VStack(alignment: .leading, spacing: 25)  {
+                Text("Instructions:").font(.title3)
+                ForEach(extraDetails, id: \.self) { item in
+                  ForEach(0..<item.instructions.count) {
+                    Text("\($0 + 1).   " + item.instructions[$0])
+                      .font(.body)
+                      .padding(.horizontal)
+                      .fixedSize(horizontal: false, vertical: true)
+                  }
+                }
+              }.frame(width: 350, alignment: .leading)
+              .background(Color.gray.opacity(0.1))
+              .padding()
+              
+              
+              
               Spacer()
 
             }
