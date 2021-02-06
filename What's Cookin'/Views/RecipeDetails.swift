@@ -38,8 +38,14 @@ struct RecipeDetails: View {
                   .padding(.top, 25.0)
                   .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
                   .multilineTextAlignment(.center)
-              Section {
-              }
+                Section {
+                  Text(extraDetails.first?.ingredients[0] ?? "")
+                  ForEach(extraDetails, id: \.self) { item in
+                    ForEach(item.ingredients, id: \.self) { ingredient in
+                      Text(ingredient)
+                    }
+                  }
+                }
               Spacer()
 
             }
@@ -75,6 +81,7 @@ struct RecipeDetails: View {
           DispatchQueue.main.async {
             self.extraDetails = decodedResponse
             print(decodedResponse)
+            print(extraDetails)
           }
           return
         }
