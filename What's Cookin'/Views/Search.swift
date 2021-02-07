@@ -116,6 +116,7 @@ struct Search: View {
           .navigationBarTitle("Search", displayMode: .inline)
           
       }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func addIngredient() {

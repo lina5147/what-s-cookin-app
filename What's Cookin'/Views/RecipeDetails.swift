@@ -37,10 +37,11 @@ struct RecipeDetails: View {
                 .padding(.horizontal)
                 .padding(.vertical, 12.0)
                 .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                .multilineTextAlignment(.center)
               
 
               VStack(alignment: .leading, spacing: 10)  {
-                Text("Ingredients:").font(.title3)
+                Text("Ingredients:").font(.title3).fontWeight(.bold)
                 ForEach(extraDetails, id: \.self) { item in
                   ForEach(item.ingredients, id: \.self) { ingredient in
                     Text(" •  " + ingredient)
@@ -50,10 +51,10 @@ struct RecipeDetails: View {
                   }
                 }
               }.frame(width: 350, alignment: .leading)
-              .background(Color.gray.opacity(0.1))
+
               
-              VStack(alignment: .leading, spacing: 25)  {
-                Text("Instructions:").font(.title3)
+              VStack(alignment: .leading, spacing: 20)  {
+                Text("Instructions:").font(.title3).fontWeight(.bold)
                 ForEach(extraDetails, id: \.self) { item in
                   ForEach(0..<item.instructions.count) {
                     Text("\($0 + 1).   " + item.instructions[$0])
@@ -63,7 +64,7 @@ struct RecipeDetails: View {
                   }
                 }
               }.frame(width: 350, alignment: .leading)
-              .background(Color.gray.opacity(0.1))
+//              .background(Color.gray.opacity(0.1))
               .padding()
               
               
@@ -82,11 +83,12 @@ struct RecipeDetails: View {
               .cornerRadius(15)
               .padding(.top, 18.0)
 
-   
-        }.onAppear(perform: loadData)
-      }
-      .navigationBarTitle("Recipe", displayMode: .inline).font(.title2)
-      
+//
+//        }.onAppear(perform: loadData)
+//      }.navigationBarTitle("Recipe", displayMode: .inline).font(.title2)
+      .onAppear(perform: loadData)
+        }.navigationBarTitle("Recipe", displayMode: .inline).font(.title2)
+      }.navigationViewStyle(StackNavigationViewStyle())
     }
   
   func loadData() {
@@ -95,15 +97,15 @@ struct RecipeDetails: View {
         print("Invalid URL")
         return
     }
-    print(url)
+//    print(url)
     let request = URLRequest(url: url)
     URLSession.shared.dataTask(with: request) { data, response, error in
       if let data = data {
         if let decodedResponse = try? JSONDecoder().decode([Details].self, from: data) {
           DispatchQueue.main.async {
             self.extraDetails = decodedResponse
-            print(decodedResponse)
-            print(extraDetails)
+//            print(decodedResponse)
+//            print(extraDetails)
           }
           return
         }
@@ -115,6 +117,6 @@ struct RecipeDetails: View {
 
 struct RecipeDetails_Previews: PreviewProvider {
     static var previews: some View {
-      RecipeDetails(id: 246428, title: "Chicken Pot Pie", image: "https://spoonacular.com/recipeImages/641901-312x231.jpg")
+      RecipeDetails(id: 660837, title: "Spaghetti With Smoked Salmon and Prawns", image: "https://spoonacular.com/recipeImages/660837-312x231.jpg")
     }
 }

@@ -65,7 +65,7 @@ struct SearchResults: View {
                       }.padding(.vertical)
                     }
                     
-                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
+                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 525)
                   .background(Color.white)
                   .cornerRadius(15)
                   .padding(.top, 15.0)
@@ -86,6 +86,7 @@ struct SearchResults: View {
           }
           .navigationBarTitle("Search Results", displayMode: .inline).font(.title2)
       }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
   
   func loadData() {
@@ -98,7 +99,7 @@ struct SearchResults: View {
       ingredientsString += "\(i),"
     }
     
-    print(ingredientsString)
+//    print(ingredientsString)
     guard let url = URL(string: "http://127.0.0.1:5000/search?ingredients=\(ingredientsString)") else {
         print("Invalid URL")
         return
@@ -127,6 +128,6 @@ struct SearchResults: View {
 
 struct SearchResults_Previews: PreviewProvider {
     static var previews: some View {
-      SearchResults(ingredients: .constant(["tomato", "chicken", "carrot"]))
+      SearchResults(ingredients: .constant(["tomato", "chicken", "onion"]))
     }
 }
