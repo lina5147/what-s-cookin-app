@@ -26,11 +26,10 @@ struct ContentView: View {
 
           FavoritesList()
               .tabItem {
-                  Label("List", systemImage: "list.bullet")
+                  Label("Favorites", systemImage: "heart")
               }
               .tag(Tab.favorites)
       }
-
     }
 }
 

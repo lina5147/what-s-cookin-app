@@ -82,9 +82,11 @@ struct RecipeDetails: View {
                 .padding(.leading, 20.0)
           }
               .frame(minWidth: 0, maxWidth: .infinity, minHeight: 700)
-          .background(Color.yellow.opacity(0.9))
+              .background(Color.yellow.opacity(0.9))
               .cornerRadius(15)
-              .padding(.top, 18.0)
+              .padding(.top, 15.0)
+              .padding(.leading, 10.0)
+          
 
 //
 //        }.onAppear(perform: loadData)

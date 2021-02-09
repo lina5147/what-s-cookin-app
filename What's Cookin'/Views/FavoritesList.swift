@@ -27,18 +27,20 @@ struct FavoritesList: View {
                       image
                           .resizable()
                           .cornerRadius(8)
-                        .frame(width: 70, height: 60)
-                        .padding(.horizontal, 8.0)
+                        .frame(width: 75, height: 70)
+                        .padding(.horizontal, 12.0)
 //                          .aspectRatio(contentMode: .fit)
                     }
                     Spacer()
-                    Text(item.title)
+                    VStack (alignment: .leading) {
+                      Text(item.title)
                       .font(.body)
-                      .padding(.horizontal)
+                      .padding(.trailing)
+                    }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                   }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 115)
                     .background(Color.white)
                     .cornerRadius(15)
-                    .padding(.top, 15.0)
+                    .padding(.bottom, 8.0)
                     .padding(.horizontal, 20.0)
 //                }
               }
@@ -46,14 +48,15 @@ struct FavoritesList: View {
               VStack {
                 Text("Let's start adding to your favorites :)")
               }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
-              .background(Color.white)
-              .cornerRadius(15)
-              .padding(.top, 15.0)
-              .padding(.horizontal, 20.0)
+              // add a picture?? 
+//              .background(Color.white)
+//              .cornerRadius(15)
+////              .padding(.top, 15.0)
+//              .padding(.horizontal, 20.0)
             }
 //          }
               Spacer()
-            }
+            }.padding(.top, 15.0)
         }
           
       }.navigationBarTitle("Favorites", displayMode: .inline).font(.title2)

@@ -52,7 +52,7 @@ struct SearchResults: View {
                       }.padding(.vertical)
                     }
                     
-                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 525)
+                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 500)
                   .background(Color.white)
                   .cornerRadius(15)
                   .padding(.top, 15.0)
