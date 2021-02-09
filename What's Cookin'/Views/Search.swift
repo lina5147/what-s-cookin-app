@@ -48,9 +48,11 @@ struct Search: View {
             Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
             ScrollView{
               VStack{
-                Text("Let's Explore!").font(.title2).padding(.top, 11.0)
+                Text("Let's Explore!")
+                  .font(Font.custom("ReemKufi-Regular", size: 25))
+                  .padding(.top, 11.0)
                 Text("Add ingredients to the ingredients list. When you are ready to see what recipes we have for the ingredients you have listed, tap on search for recipes.")
-                    .font(.title3)
+                    .font(Font.custom("ReemKufi-Regular", size: 20))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16.0).padding(.top, 3.0)
                 HStack {
@@ -64,7 +66,9 @@ struct Search: View {
                       .padding(.trailing, 10)
                   }
                 }
-                Text("Ingredients List:").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).padding(.bottom, 1)
+                Text("Ingredients List:")
+                  .font(Font.custom("ReemKufi-Regular", size: 24))
+                  .padding(.bottom, 1)
                 Section {
                     ForEach(ingredients, id: \.self) { ingredient in
                       Section {
@@ -73,7 +77,7 @@ struct Search: View {
                           self.deleteIngredient(ingredient: ingredient)
                         }){
                         Text(ingredient)
-                            .font(.title2)
+                            .font(Font.custom("ReemKufi-Regular", size: 24))
                             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 40)
                             .foregroundColor(Color.black)
                           Spacer()

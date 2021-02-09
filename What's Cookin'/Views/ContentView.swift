@@ -30,6 +30,7 @@ struct ContentView: View {
               }
               .tag(Tab.favorites)
       }
+
     }
 }
 
