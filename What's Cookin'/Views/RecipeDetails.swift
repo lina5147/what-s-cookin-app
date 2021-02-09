@@ -41,7 +41,7 @@ struct RecipeDetails: View {
                 .multilineTextAlignment(.center)
               
               Button(action: addRecipe) {
-                             Text("Add to favorites")
+                             Text("add to favorites")
                          }
 
 
