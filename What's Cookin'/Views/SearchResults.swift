@@ -10,23 +10,12 @@ import SwiftUI
 import URLImage
 
 struct Recipe: Codable, Identifiable, Hashable {
-//  enum CodingKeys: String, CodingKey {
-//      case id
-//      case title
-//      case image
-//      case additionalIngredients = "missedIngredients"
-//  }
-  
   var id: Int
   var title: String
   var image: String
   var additionalIngredients: [String]
 
 }
-
-//struct Ingredients: Codable, Hashable {
-//  var name: String
-//}
 
 struct SearchResults: View {
   @Binding var ingredients: [String]
@@ -50,8 +39,6 @@ struct SearchResults: View {
                       let url = URL(string: item.image)!
                       URLImage(url: url, content: { image in
                           image
-//                              .resizable()
-//                              .aspectRatio(contentMode: .fit)
                               .cornerRadius(15)
                               .padding(.horizontal, 20.0)
                       })
@@ -74,9 +61,6 @@ struct SearchResults: View {
             if anyRecipes == false {
               VStack {
                 Text("No results found...")
-//                Text("Suggestions:")
-//                Text("- Make sure all ingredients are spelled correctly")
-//                Text("- Check to make sure ingredients are added to the list")
               }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
               .background(Color.white)
               .cornerRadius(15)
@@ -123,7 +107,6 @@ struct SearchResults: View {
       print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
     }.resume()
   }
-  
 }
 
 struct SearchResults_Previews: PreviewProvider {
