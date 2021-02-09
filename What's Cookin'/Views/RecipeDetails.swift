@@ -15,8 +15,8 @@ struct Details: Codable, Hashable {
 
 
 struct RecipeDetails: View {
-  @EnvironmentObject var favorites: Favorites
-  @State var extraDetails = [Details]()
+    @EnvironmentObject var favorites: Favorites
+    @State var extraDetails = [Details]()
     var id: Int
     var title: String
     var image: String
@@ -97,9 +97,9 @@ struct RecipeDetails: View {
     }
   
   func addRecipe() {
-    let save = RecipeInfo(id: id, title: title, image: image, ingredients: extraDetails[0].ingredients, instructions: extraDetails[0].instructions)
+    let saveRecipe = RecipeInfo(id: id, title: title, image: image, ingredients: extraDetails[0].ingredients, instructions: extraDetails[0].instructions)
     
-    favorites.favoriteRecipes.append(save)
+    favorites.favoriteRecipes.append(saveRecipe)
     
   }
   

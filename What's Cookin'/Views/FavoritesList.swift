@@ -16,34 +16,38 @@ struct FavoritesList: View {
       NavigationView{
         ZStack {
           Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
-          ScrollView{
+//          ScrollView{
             VStack {
             if !favorites.favoriteRecipes.isEmpty {
-//              List {
+              List {
                 ForEach(favorites.favoriteRecipes, id: \.self) { item in
-                  let url = URL(string: item.image)!
                   HStack {
+                    let url = URL(string: item.image)!
                     URLImage(url: url) { image in
                       image
                           .resizable()
                           .cornerRadius(8)
                         .frame(width: 75, height: 70)
-                        .padding(.horizontal, 12.0)
+                        .padding(.horizontal, 8.0)
 //                          .aspectRatio(contentMode: .fit)
                     }
                     Spacer()
                     VStack (alignment: .leading) {
                       Text(item.title)
                       .font(.body)
-                      .padding(.trailing)
+                        .padding(.trailing, 8.0)
                     }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                  }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 115)
-                    .background(Color.white)
-                    .cornerRadius(15)
-                    .padding(.bottom, 8.0)
-                    .padding(.horizontal, 20.0)
-//                }
-              }
+                  }.padding(.top, 5)
+                  .padding(.bottom, 5)
+//                  .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 115)
+//                    .background(Color.white)
+//                    .cornerRadius(15)
+//                    .padding(.bottom, 8.0)
+//                    .padding(.horizontal, 20.0)
+
+                
+                }.onDelete(perform: deleteRecipe)
+              }.cornerRadius(25)
             } else {
               VStack {
                 Text("Let's start adding to your favorites :)")
@@ -57,11 +61,17 @@ struct FavoritesList: View {
 //          }
               Spacer()
             }.padding(.top, 15.0)
-        }
+            .padding(.horizontal, 20.0)
+//        }
           
       }.navigationBarTitle("Favorites", displayMode: .inline).font(.title2)
     }.navigationViewStyle(StackNavigationViewStyle())
   }
+
+  func deleteRecipe(at offsets: IndexSet) {
+    favorites.favoriteRecipes.remove(atOffsets: offsets)
+  }
+  
 }
 
 struct FavoritesList_Previews: PreviewProvider {
