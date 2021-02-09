@@ -10,7 +10,7 @@ import SwiftUI
 struct Search: View {
       @State private var ingredients = [String]()
       @State private var text = ""
-  
+
   
   init() {
           let appearance = UINavigationBarAppearance()
@@ -137,5 +137,6 @@ struct Search: View {
 struct Search_Previews: PreviewProvider {
     static var previews: some View {
         Search()
+          .environmentObject(Favorites())
     }
 }

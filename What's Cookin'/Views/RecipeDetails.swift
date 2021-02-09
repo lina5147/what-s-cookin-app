@@ -118,5 +118,6 @@ struct RecipeDetails: View {
 struct RecipeDetails_Previews: PreviewProvider {
     static var previews: some View {
       RecipeDetails(id: 660837, title: "Spaghetti With Smoked Salmon and Prawns", image: "https://spoonacular.com/recipeImages/660837-312x231.jpg")
+        .environmentObject(Favorites())
     }
 }

@@ -9,15 +9,27 @@ import SwiftUI
 
 
 struct ContentView: View {
-  
+  @State private var selection: Tab = .search
+
+  enum Tab {
+      case search
+      case favorites
+  }
     var body: some View {
-      TabView {
-                  Search()
-                      .tabItem {
-                          Image(systemName: "magnifyingglass")
-                          Text("Explore")
-                      }
+      
+      TabView(selection: $selection) {
+          Search()
+              .tabItem {
+                  Label("Explore", systemImage: "magnifyingglass")
               }
+              .tag(Tab.search)
+
+          FavoritesList()
+              .tabItem {
+                  Label("List", systemImage: "list.bullet")
+              }
+              .tag(Tab.favorites)
+      }
 
     }
 }
@@ -26,5 +38,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+          .environmentObject(Favorites())
     }
 }

@@ -112,5 +112,6 @@ struct SearchResults: View {
 struct SearchResults_Previews: PreviewProvider {
     static var previews: some View {
       SearchResults(ingredients: .constant(["tomato", "chicken", "onion"]))
+        .environmentObject(Favorites())
     }
 }

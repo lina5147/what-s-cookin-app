@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct What_s_Cookin_App: App {
+  @StateObject private var favorites = Favorites()
+  
+  
     var body: some Scene {
         WindowGroup {
             ContentView()
+              .environmentObject(favorites)
         }
     }
 }
