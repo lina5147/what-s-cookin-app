@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct FavoritesList: View {
   
@@ -13,16 +14,26 @@ struct FavoritesList: View {
 
     var body: some View {
       VStack {
-      Text("\(favorites.timeCount)")
-      Button(action: add) {
-          Text("add")
-      }
+        if !favorites.favoriteRecipes.isEmpty {
+          List {
+            ForEach(favorites.favoriteRecipes, id: \.self) { item in
+              let url = URL(string: item.image)!
+              HStack {
+                URLImage(url: url) { image in
+                  image
+                      .resizable()
+                      .frame(width: 50, height: 50)
+//                      .aspectRatio(contentMode: .fit)
+                }
+              Text(item.title)
+              }
+            }
+          }
+        }
+        
       }
     }
-  
-  func add() {
-    favorites.timeCount += 1
-  }
+
 }
 
 struct FavoritesList_Previews: PreviewProvider {

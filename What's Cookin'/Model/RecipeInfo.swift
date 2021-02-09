@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct RecipeInfo: Hashable {
+struct RecipeInfo : Hashable {
   var id: Int
   var title: String
   var image: String

@@ -15,6 +15,7 @@ struct Details: Codable, Hashable {
 
 
 struct RecipeDetails: View {
+  @EnvironmentObject var favorites: Favorites
   @State var extraDetails = [Details]()
     var id: Int
     var title: String
@@ -39,6 +40,10 @@ struct RecipeDetails: View {
                 .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
                 .multilineTextAlignment(.center)
               
+              Button(action: addRecipe) {
+                             Text("Add to favorites")
+                         }
+
 
               VStack(alignment: .leading, spacing: 10)  {
                 Text("Ingredients:").font(.title3).fontWeight(.bold)
@@ -67,8 +72,6 @@ struct RecipeDetails: View {
 //              .background(Color.gray.opacity(0.1))
               .padding()
               
-              
-              
               Spacer()
 
             }
@@ -90,6 +93,13 @@ struct RecipeDetails: View {
         }.navigationBarTitle("Recipe", displayMode: .inline).font(.title2)
       }.navigationViewStyle(StackNavigationViewStyle())
     }
+  
+  func addRecipe() {
+    let save = RecipeInfo(id: id, title: title, image: image, ingredients: extraDetails[0].ingredients, instructions: extraDetails[0].instructions)
+    
+    favorites.favoriteRecipes.append(save)
+    
+  }
   
   func loadData() {
 
