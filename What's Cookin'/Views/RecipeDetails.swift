@@ -106,10 +106,15 @@ struct RecipeDetails: View {
     }
   
   func addRecipe() {
-    let saveRecipe = RecipeInfo(id: id, title: title, image: image, ingredients: extraDetails[0].ingredients, instructions: extraDetails[0].instructions)
+    let favoriteRecipe = SavedRecipe(context: managedObjectContext)
+    favoriteRecipe.id = Int32(self.id)
+    favoriteRecipe.title = self.title
+    favoriteRecipe.image = self.image
+    favoriteRecipe.ingredients = self.extraDetails[0].ingredients
+    favoriteRecipe.instructions = self.extraDetails[0].instructions
     
-    favorites.favoriteRecipes.append(saveRecipe)
-    
+    PersistenceController.shared.saveContext()
+
   }
   
   func loadData() {

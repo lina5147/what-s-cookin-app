@@ -26,11 +26,11 @@ struct FavoritesList: View {
           Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
 //          ScrollView{
             VStack {
-            if !favorites.favoriteRecipes.isEmpty {
+//            if !favorites.favoriteRecipes.isEmpty {
               List {
-                ForEach(favorites.favoriteRecipes, id: \.self) { item in
+                ForEach(savedRecipeList, id: \.self) { recipe in
                   HStack {
-                    let url = URL(string: item.image)!
+                    let url = URL(string: recipe.image ?? "unknown")!
                     URLImage(url: url) { image in
                       image
                           .resizable()
@@ -41,7 +41,7 @@ struct FavoritesList: View {
                     }
                     Spacer()
                     VStack (alignment: .leading) {
-                      Text(item.title)
+                      Text(recipe.title ?? "unknown")
                       .font(.body)
                         .padding(.trailing, 8.0)
                     }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
@@ -56,16 +56,17 @@ struct FavoritesList: View {
                 
                 }.onDelete(perform: deleteRecipe)
               }.cornerRadius(15)
-            } else {
-              VStack {
-                Text("Let's start adding to your favorites :)")
-              }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
+//            }
+//            else {
+//              VStack {
+//                Text("Let's start adding to your favorites :)")
+//              }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
               // add a picture?? 
 //              .background(Color.white)
 //              .cornerRadius(15)
 ////              .padding(.top, 15.0)
 //              .padding(.horizontal, 20.0)
-            }
+//            }
 //          }
               Spacer()
             }.padding(.top, 15.0)
