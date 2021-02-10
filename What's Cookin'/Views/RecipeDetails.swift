@@ -47,11 +47,13 @@ struct RecipeDetails: View {
                 .padding(.vertical, 12.0)
                 .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
                 .multilineTextAlignment(.center)
-              
-              Button(action: addRecipe) {
-                             Text("add to favorites")
-                         }
-
+              if !checkIfItemExist(id: self.id) {
+                Button(action: addRecipe) {
+                  Image(systemName: "heart")
+                           }
+              } else {
+                Image(systemName: "heart.fill")
+              }
 
               VStack(alignment: .leading, spacing: 10)  {
                 Text("Ingredients:").font(.title3).fontWeight(.bold)
@@ -99,6 +101,15 @@ struct RecipeDetails: View {
         }.navigationBarTitle("Recipe", displayMode: .inline).font(.title2)
       }.navigationViewStyle(StackNavigationViewStyle())
     }
+// check if recipe is already saved to favorites
+  func checkIfItemExist(id: Int) -> Bool {
+    for item in savedRecipeList {
+      if Int(item.id) == id {
+        return true
+      }
+    }
+    return false
+  }
   
   func addRecipe() {
     let favoriteRecipe = SavedRecipe(context: managedObjectContext)
@@ -118,7 +129,7 @@ struct RecipeDetails: View {
         print("Invalid URL")
         return
     }
-//    print(url)
+    print(url)
     let request = URLRequest(url: url)
     URLSession.shared.dataTask(with: request) { data, response, error in
       if let data = data {
