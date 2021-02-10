@@ -49,7 +49,9 @@ struct RecipeDetails: View {
                     Image(systemName: "heart").foregroundColor(.red).padding(.trailing, 5.0).font(.system(size: 26))
                   }
                 } else {
-                  Image(systemName: "heart.fill").foregroundColor(.red).padding(.trailing, 5.0).font(.system(size: 26))
+                  Button(action: removeFromFavorites) {
+                    Image(systemName: "heart.fill").foregroundColor(.red).padding(.trailing, 5.0).font(.system(size: 26))
+                  }
                 }
             }
 //                Spacer()
@@ -115,6 +117,16 @@ struct RecipeDetails: View {
       }
     }
     return false
+  }
+  
+  func removeFromFavorites() {
+    for item in savedRecipeList {
+      if Int(item.id) == self.id {
+        managedObjectContext.delete(item)
+        break
+      }
+    }
+    PersistenceController.shared.saveContext()
   }
   
   func addRecipe() {
