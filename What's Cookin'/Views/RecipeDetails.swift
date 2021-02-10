@@ -42,18 +42,24 @@ struct RecipeDetails: View {
                       .resizable()
                       .aspectRatio(contentMode: .fit)
               })
-              Text(title)
-                .padding(.horizontal)
-                .padding(.vertical, 12.0)
-                .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
-                .multilineTextAlignment(.center)
-              if !checkIfItemExist(id: self.id) {
-                Button(action: addRecipe) {
-                  Image(systemName: "heart")
-                           }
-              } else {
-                Image(systemName: "heart.fill")
-              }
+              HStack {
+                Spacer()
+                if !checkIfItemExist(id: self.id) {
+                  Button(action: addRecipe) {
+                    Image(systemName: "heart").foregroundColor(.red).padding(.trailing, 5.0).font(.system(size: 26))
+                  }
+                } else {
+                  Image(systemName: "heart.fill").foregroundColor(.red).padding(.trailing, 5.0).font(.system(size: 26))
+                }
+            }
+//                Spacer()
+                Text(title)
+                  .padding(.horizontal)
+                  .padding(.bottom, 12.0)
+                  .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                  .multilineTextAlignment(.center)
+
+//              }
 
               VStack(alignment: .leading, spacing: 10)  {
                 Text("Ingredients:").font(.title3).fontWeight(.bold)
@@ -116,11 +122,8 @@ struct RecipeDetails: View {
     favoriteRecipe.id = Int32(self.id)
     favoriteRecipe.title = self.title
     favoriteRecipe.image = self.image
-//    favoriteRecipe.ingredients = self.extraDetails[0].ingredients
-//    favoriteRecipe.instructions = self.extraDetails[0].instructions
     
     PersistenceController.shared.saveContext()
-
   }
   
   func loadData() {
