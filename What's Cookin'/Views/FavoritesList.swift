@@ -28,7 +28,8 @@ struct FavoritesList: View {
 //            if !favorites.favoriteRecipes.isEmpty {
               List {
                 ForEach(savedRecipeList, id: \.self) { recipe in
-                  HStack {
+                  NavigationLink (destination: RecipeDetails(id: Int(recipe.id), title: recipe.title ?? "unknown", image: recipe.image ?? "unknown")) {
+                    HStack {
                     let url = URL(string: recipe.image ?? "unknown")!
                     URLImage(url: url) { image in
                       image
@@ -46,6 +47,7 @@ struct FavoritesList: View {
                     }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                   }.padding(.top, 5)
                   .padding(.bottom, 5)
+                  }
 //                  .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 115)
 //                    .background(Color.white)
 //                    .cornerRadius(15)
