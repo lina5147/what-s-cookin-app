@@ -78,7 +78,12 @@ struct FavoritesList: View {
   }
 
   func deleteRecipe(at offsets: IndexSet) {
-    favorites.favoriteRecipes.remove(atOffsets: offsets)
+    for index in offsets {
+            let recipe = savedRecipeList[index]
+            managedObjectContext.delete(recipe)
+        }
+    PersistenceController.shared.saveContext()
+
   }
   
 }
