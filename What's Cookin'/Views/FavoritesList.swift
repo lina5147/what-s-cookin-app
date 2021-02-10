@@ -11,6 +11,14 @@ import URLImage
 struct FavoritesList: View {
   
   @EnvironmentObject var favorites: Favorites
+  @Environment(\.managedObjectContext) var managedObjectContext
+  
+  @FetchRequest(
+      entity: SavedRecipe.entity(),
+      sortDescriptors: [
+          NSSortDescriptor(keyPath: \SavedRecipe.title, ascending: true),
+      ]
+  ) var savedRecipeList: FetchedResults<SavedRecipe>
 
     var body: some View {
       NavigationView{
