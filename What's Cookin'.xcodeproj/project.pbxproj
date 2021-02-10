@@ -22,6 +22,7 @@
 		4A9D57D225D24AF60053EF7A /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D57D125D24AF60053EF7A /* Favorites.swift */; };
 		4A9D57D525D24BED0053EF7A /* FavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D57D425D24BED0053EF7A /* FavoritesList.swift */; };
 		4A9D57E825D347FA0053EF7A /* ReemKufi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D57E725D347FA0053EF7A /* ReemKufi-Regular.ttf */; };
+		4A9D583725D3C5800053EF7A /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D583525D3C5800053EF7A /* Main.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		4A9D57D125D24AF60053EF7A /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		4A9D57D425D24BED0053EF7A /* FavoritesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesList.swift; sourceTree = "<group>"; };
 		4A9D57E725D347FA0053EF7A /* ReemKufi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReemKufi-Regular.ttf"; sourceTree = "<group>"; };
+		4A9D583625D3C5800053EF7A /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				4A9D57CC25D2471A0053EF7A /* RecipeInfo.swift */,
+				4A9D583525D3C5800053EF7A /* Main.xcdatamodeld */,
 				4A9D57D125D24AF60053EF7A /* Favorites.swift */,
 			);
 			path = Models;
@@ -207,6 +210,7 @@
 				4A9D57D225D24AF60053EF7A /* Favorites.swift in Sources */,
 				4A1B6D8125CA2E9400C8CB28 /* Search.swift in Sources */,
 				4A1B6D7D25CA24CD00C8CB28 /* SearchResults.swift in Sources */,
+				4A9D583725D3C5800053EF7A /* Main.xcdatamodeld in Sources */,
 				4A60509725CBA05900EACCFF /* RecipeDetails.swift in Sources */,
 				4A9D57CD25D2471A0053EF7A /* RecipeInfo.swift in Sources */,
 				4A60509A25CBA0C800EACCFF /* FullRecipeButton.swift in Sources */,
@@ -419,6 +423,19 @@
 			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4A9D583525D3C5800053EF7A /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A9D583625D3C5800053EF7A /* Main.xcdatamodel */,
+			);
+			currentVersion = 4A9D583625D3C5800053EF7A /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4A42472725C8E2B100E750CB /* Project object */;
 }
