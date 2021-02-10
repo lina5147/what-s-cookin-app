@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct What_s_Cookin_App: App {
-  @StateObject private var favorites = Favorites()
   let persistenceController = PersistenceController.shared
   @Environment(\.scenePhase) var scenePhase
 
-  
-  
     var body: some Scene {
         WindowGroup {
           ContentView()

@@ -10,7 +10,6 @@ import URLImage
 
 struct FavoritesList: View {
   
-  @EnvironmentObject var favorites: Favorites
   @Environment(\.managedObjectContext) var managedObjectContext
   
   @FetchRequest(
@@ -91,6 +90,5 @@ struct FavoritesList: View {
 struct FavoritesList_Previews: PreviewProvider {
     static var previews: some View {
         FavoritesList()
-          .environmentObject(Favorites())
     }
 }

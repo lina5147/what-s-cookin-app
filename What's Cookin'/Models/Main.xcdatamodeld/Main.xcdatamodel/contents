@@ -3,11 +3,9 @@
     <entity name="SavedRecipe" representedClassName="SavedRecipe" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="String"/>
-        <attribute name="ingredients" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[String]"/>
-        <attribute name="instructions" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[String]"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="SavedRecipe" positionX="-36" positionY="9" width="128" height="118"/>
+        <element name="SavedRecipe" positionX="-36" positionY="9" width="128" height="88"/>
     </elements>
 </model>

@@ -24,7 +24,6 @@ struct RecipeDetails: View {
       ]
   ) var savedRecipeList: FetchedResults<SavedRecipe>
 
-    @EnvironmentObject var favorites: Favorites
     @State var extraDetails = [Details]()
     var id: Int
     var title: String
@@ -96,10 +95,6 @@ struct RecipeDetails: View {
               .padding(.top, 15.0)
               .padding(.leading, 10.0)
           
-
-//
-//        }.onAppear(perform: loadData)
-//      }.navigationBarTitle("Recipe", displayMode: .inline).font(.title2)
       .onAppear(perform: loadData)
         }.navigationBarTitle("Recipe", displayMode: .inline).font(.title2)
       }.navigationViewStyle(StackNavigationViewStyle())
@@ -110,8 +105,8 @@ struct RecipeDetails: View {
     favoriteRecipe.id = Int32(self.id)
     favoriteRecipe.title = self.title
     favoriteRecipe.image = self.image
-    favoriteRecipe.ingredients = self.extraDetails[0].ingredients
-    favoriteRecipe.instructions = self.extraDetails[0].instructions
+//    favoriteRecipe.ingredients = self.extraDetails[0].ingredients
+//    favoriteRecipe.instructions = self.extraDetails[0].instructions
     
     PersistenceController.shared.saveContext()
 
@@ -144,6 +139,5 @@ struct RecipeDetails: View {
 struct RecipeDetails_Previews: PreviewProvider {
     static var previews: some View {
       RecipeDetails(id: 660837, title: "Spaghetti With Smoked Salmon and Prawns", image: "https://spoonacular.com/recipeImages/660837-312x231.jpg")
-        .environmentObject(Favorites())
     }
 }
