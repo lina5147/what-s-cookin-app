@@ -142,6 +142,5 @@ struct Search: View {
 struct Search_Previews: PreviewProvider {
     static var previews: some View {
         Search()
-          .environmentObject(Favorites())
     }
 }
