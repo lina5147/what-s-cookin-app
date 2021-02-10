@@ -47,7 +47,7 @@ struct FavoritesList: View {
 
                 
                 }.onDelete(perform: deleteRecipe)
-              }.cornerRadius(25)
+              }.cornerRadius(15)
             } else {
               VStack {
                 Text("Let's start adding to your favorites :)")

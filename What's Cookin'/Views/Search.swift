@@ -51,7 +51,7 @@ struct Search: View {
                 Text("Let's Explore!")
                   .font(Font.custom("ReemKufi-Regular", size: 25))
                   .padding(.top, 11.0)
-                Text("Add ingredients to the ingredients list. When you are ready to see what recipes we have for the ingredients you have listed, tap on search for recipes.")
+                Text("Add ingredients to the ingredient list. When you are ready to see what recipes we have for the ingredients you have listed, tap on search for recipes.")
                     .font(Font.custom("ReemKufi-Regular", size: 20))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16.0).padding(.top, 3.0)
@@ -66,7 +66,7 @@ struct Search: View {
                       .padding(.trailing, 10)
                   }
                 }
-                Text("Ingredients List:")
+                Text("Ingredient List:")
                   .font(Font.custom("ReemKufi-Regular", size: 24))
                   .padding(.bottom, 1)
                 Section {
@@ -112,7 +112,7 @@ struct Search: View {
                     }
                 }.padding(.bottom)
               }.background(Color.white)
-               .cornerRadius(25)
+               .cornerRadius(15)
               .padding(.horizontal, 20.0)
               .padding(.top, 15.0)
                .frame(minHeight: 650)
