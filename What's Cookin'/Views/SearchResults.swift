@@ -8,6 +8,7 @@
 
 import SwiftUI
 import URLImage
+import Combine
 
 struct Recipe: Codable, Identifiable, Hashable {
   var id: Int
@@ -83,11 +84,14 @@ struct SearchResults: View {
       ingredientsString += "\(i),"
     }
     
-//    print(ingredientsString)
-    guard let url = URL(string: "http://127.0.0.1:5000/search?ingredients=\(ingredientsString)") else {
+    let newString = ingredientsString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+    print(newString)
+    guard let url = URL(string: "http://127.0.0.1:5000/search/\(newString)") else {
         print("Invalid URL")
         return
     }
+    
+    
     let request = URLRequest(url: url)
     URLSession.shared.dataTask(with: request) { data, response, error in
       if let data = data {

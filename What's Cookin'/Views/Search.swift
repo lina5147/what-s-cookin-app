@@ -129,7 +129,7 @@ struct Search: View {
         self.ingredients.append(text.lowercased())
       }
       self.text = ""
-//      print(ingredients)
+      print(ingredients)
     }
     
     func deleteIngredient(ingredient: String) {
