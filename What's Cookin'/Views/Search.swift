@@ -125,8 +125,9 @@ struct Search: View {
     }
     
     func addIngredient() {
-      if text != "" && !ingredients.contains(text.lowercased()) {
-        self.ingredients.append(text.lowercased())
+      let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+      if trimmed != "" && !ingredients.contains(trimmed.lowercased()) {
+        self.ingredients.append(trimmed.lowercased())
       }
       self.text = ""
       print(ingredients)
