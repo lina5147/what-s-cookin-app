@@ -36,25 +36,25 @@ struct RecipeDetails: View {
         ScrollView{
           VStack{
             VStack{
+              ZStack(alignment: .topTrailing){
               let url = URL(string: image)!
               URLImage(url: url, content: { image in
                   image
                       .resizable()
                       .aspectRatio(contentMode: .fit)
+                
               })
-              HStack {
-                Spacer()
                 if !checkIfItemExist(id: self.id) {
                   Button(action: addRecipe) {
-                    Image(systemName: "heart").foregroundColor(.red).padding(.trailing, 5.0).font(.system(size: 26))
+                    Image(systemName: "heart").foregroundColor(.red).padding( 8.0).font(Font.system(size: 30, weight: .semibold))
                   }
                 } else {
                   Button(action: removeFromFavorites) {
-                    Image(systemName: "heart.fill").foregroundColor(.red).padding(.trailing, 5.0).font(.system(size: 26))
+                    Image(systemName: "heart.fill").foregroundColor(.red).padding( 8.0).font(.system(size: 30))
+
                   }
                 }
-            }
-//                Spacer()
+              }
                 Text(title)
                   .padding(.horizontal)
                   .padding(.bottom, 12.0)

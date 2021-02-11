@@ -86,7 +86,7 @@ struct SearchResults: View {
     
     let newString = ingredientsString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     print(newString)
-    guard let url = URL(string: "http://127.0.0.1:5000/search/\(newString)") else {
+    guard let url = URL(string: "http://127.0.0.1:5000/search?ingredients=\(newString)") else {
         print("Invalid URL")
         return
     }
