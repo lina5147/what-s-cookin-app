@@ -34,8 +34,9 @@ struct SearchResults: View {
                     VStack {
                       Text(item.title)
                         .padding(.horizontal)
-                        .padding(.top, 25.0)
-                        .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                        .padding(.top, 20.0)
+                        .font(Font.custom("ReemKufi-Regular", size: 22))
+                        .fixedSize(horizontal: false, vertical: true)
                         .multilineTextAlignment(.center)
                       let url = URL(string: item.image)!
                       URLImage(url: url, content: { image in
@@ -43,9 +44,13 @@ struct SearchResults: View {
                               .cornerRadius(15)
                               .padding(.horizontal, 20.0)
                       })
-                      Text("Additional Ingredients:").font(.title3).fontWeight(.bold).padding(.vertical, 3.0)
+                      Text("Additional Ingredients:")
+                        .font(Font.custom("Righteous-Regular", size: 18))
+                        .fontWeight(.bold)
+                        .padding(.vertical, 3.0)
                       ForEach(item.additionalIngredients, id: \.self) { item in
-                        Text(item).font(.body)
+                        Text(item)
+                          .font(Font.custom("ReemKufi-Regular", size: 18))
                       }
                       Spacer()
                       NavigationLink(destination: RecipeDetails(id: item.id, title: item.title, image: item.image)) {
@@ -53,7 +58,7 @@ struct SearchResults: View {
                       }.padding(.vertical)
                     }
                     
-                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 500)
+                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 425, maxHeight: 900)
                   .background(Color.white)
                   .cornerRadius(15)
                   .padding(.top, 15.0)

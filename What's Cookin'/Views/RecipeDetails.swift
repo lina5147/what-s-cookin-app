@@ -36,7 +36,7 @@ struct RecipeDetails: View {
         ScrollView{
           VStack{
             VStack{
-              ZStack(alignment: .topTrailing){
+//              ZStack(alignment: .topTrailing){
               let url = URL(string: image)!
               URLImage(url: url, content: { image in
                   image
@@ -44,31 +44,35 @@ struct RecipeDetails: View {
                       .aspectRatio(contentMode: .fit)
                 
               })
+              HStack {
+                Spacer()
                 if !checkIfItemExist(id: self.id) {
                   Button(action: addRecipe) {
-                    Image(systemName: "heart").foregroundColor(.red).padding( 8.0).font(Font.system(size: 30, weight: .semibold))
+                    Image(systemName: "heart").foregroundColor(.red).padding(6.0).font(Font.system(size: 30, weight: .semibold))
                   }
                 } else {
                   Button(action: removeFromFavorites) {
-                    Image(systemName: "heart.fill").foregroundColor(.red).padding( 8.0).font(.system(size: 30))
+                    Image(systemName: "heart.fill").foregroundColor(.red).padding( 6.0).font(Font.system(size: 30, weight: .semibold))
 
                   }
                 }
               }
                 Text(title)
-                  .padding(.horizontal)
+                  .padding(.horizontal, 35)
                   .padding(.bottom, 12.0)
-                  .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                  .padding(.top, -42)
+                  .font(Font.custom("Righteous-Regular", size: 19))
                   .multilineTextAlignment(.center)
 
 //              }
 
               VStack(alignment: .leading, spacing: 10)  {
-                Text("Ingredients:").font(.title3).fontWeight(.bold)
+                Text("Ingredients:")
+                  .font(Font.custom("Righteous-Regular", size: 18))
                 ForEach(extraDetails, id: \.self) { item in
                   ForEach(item.ingredients, id: \.self) { ingredient in
                     Text(" •  " + ingredient)
-                      .font(.body)
+                      .font(Font.custom("ReemKufi-Regular", size: 18))
                       .padding(.horizontal)
                       .fixedSize(horizontal: false, vertical: true)
                   }
@@ -77,11 +81,12 @@ struct RecipeDetails: View {
 
               
               VStack(alignment: .leading, spacing: 20)  {
-                Text("Instructions:").font(.title3).fontWeight(.bold)
+                Text("Instructions:")
+                  .font(Font.custom("Righteous-Regular", size: 18))
                 ForEach(extraDetails, id: \.self) { item in
                   ForEach(0..<item.instructions.count) {
                     Text("\($0 + 1).   " + item.instructions[$0])
-                      .font(.body)
+                      .font(Font.custom("ReemKufi-Regular", size: 18))
                       .padding(.horizontal)
                       .fixedSize(horizontal: false, vertical: true)
                   }

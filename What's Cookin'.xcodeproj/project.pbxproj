@@ -22,6 +22,7 @@
 		4A9D57E825D347FA0053EF7A /* ReemKufi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D57E725D347FA0053EF7A /* ReemKufi-Regular.ttf */; };
 		4A9D583725D3C5800053EF7A /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D583525D3C5800053EF7A /* Main.xcdatamodeld */; };
 		4A9D583A25D44A750053EF7A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D583925D44A750053EF7A /* PersistenceController.swift */; };
+		4A9D584625D5F0AC0053EF7A /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D584125D5EEE40053EF7A /* Righteous-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		4A9D57E725D347FA0053EF7A /* ReemKufi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReemKufi-Regular.ttf"; sourceTree = "<group>"; };
 		4A9D583625D3C5800053EF7A /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		4A9D583925D44A750053EF7A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		4A9D584125D5EEE40053EF7A /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				4A1B6D8425CA310400C8CB28 /* Helpers */,
 				4A42473625C8E2B400E750CB /* Assets.xcassets */,
 				4A42473B25C8E2B400E750CB /* Info.plist */,
+				4A9D584125D5EEE40053EF7A /* Righteous-Regular.ttf */,
 				4A9D57E725D347FA0053EF7A /* ReemKufi-Regular.ttf */,
 				4A42473825C8E2B400E750CB /* Preview Content */,
 			);
@@ -190,6 +193,7 @@
 			files = (
 				4A42473A25C8E2B400E750CB /* Preview Assets.xcassets in Resources */,
 				4A42473725C8E2B400E750CB /* Assets.xcassets in Resources */,
+				4A9D584625D5F0AC0053EF7A /* Righteous-Regular.ttf in Resources */,
 				4A9D57E825D347FA0053EF7A /* ReemKufi-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

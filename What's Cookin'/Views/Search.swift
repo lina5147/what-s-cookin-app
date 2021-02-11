@@ -101,7 +101,7 @@ struct Search: View {
                       text = ""
                     }){
                       Text("Clear")
-                          .font(.title2)
+                          .font(Font.custom("ReemKufi-Regular", size: 17))
                           .frame(width: 160, height: 50)
                           .foregroundColor(Color.black)
                           .border(Color.yellow.opacity(0.6), width: 5)

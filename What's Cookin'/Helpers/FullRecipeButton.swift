@@ -9,8 +9,8 @@ import SwiftUI
 
 struct FullRecipeButton: View {
     var body: some View {
-      Text("Full Recipe")
-        .font(.body)
+      Text("View Recipe")
+        .font(Font.custom("ReemKufi-Regular", size: 17))
         .frame(width: 160, height: 30)
         .background(Color.yellow.opacity(0.6))
         .foregroundColor(Color.black)

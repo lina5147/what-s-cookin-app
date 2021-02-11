@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchButton: View {
     var body: some View {
       Text("Search for Recipes")
-        .font(.body)
+        .font(Font.custom("ReemKufi-Regular", size: 17))
         .frame(width: 160, height: 50)
         .background(Color.yellow.opacity(0.6))
         .foregroundColor(Color.black)
