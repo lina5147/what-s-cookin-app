@@ -56,7 +56,7 @@ struct RecipeDetails: View {
                 }
               }
                 Text(title)
-                  .padding(.horizontal, 35)
+                  .padding(.horizontal, 55)
                   .padding(.bottom, 12.0)
                   .padding(.top, -42)
                   .font(Font.custom("Righteous-Regular", size: 19))

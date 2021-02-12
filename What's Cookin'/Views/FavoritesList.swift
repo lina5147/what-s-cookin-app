@@ -40,7 +40,7 @@ struct FavoritesList: View {
                       Spacer()
                       VStack (alignment: .leading) {
                         Text(recipe.title ?? "unknown")
-                        .font(.body)
+                          .font(Font.custom("ReemKufi-Regular", size: 17))
                           .padding(.trailing, 8.0)
                       }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     }.padding(.vertical, 5)
@@ -50,8 +50,23 @@ struct FavoritesList: View {
             }
             else {
               VStack {
-                Text("Let's start adding to your favorites :)")
-              }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
+                Image("cooking")
+                  .resizable()
+                  .frame(width: 175.0, height: 175.0)
+                  .padding(.bottom, 15)
+                Text("No Favorite Recipes Yet!")
+                  .font(Font.custom("Righteous-Regular", size: 22))
+                  .padding(.bottom, 5)
+                Text("Use the heart button to save to your favorites.")
+                  .font(Font.custom("ReemKufi-Regular", size: 20))
+                  .padding(.horizontal, 15)
+                  .multilineTextAlignment(.center)
+              }
+                .frame(minHeight: 620)
+                .padding(.top, 15)
+                .padding(.horizontal, 15)
+                .background(Color.white)
+                .cornerRadius(15)
             }
               Spacer()
             }
