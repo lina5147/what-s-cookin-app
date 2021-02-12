@@ -17,6 +17,7 @@ struct FavoritesList: View {
           NSSortDescriptor(keyPath: \SavedRecipe.title, ascending: true),
       ]
   ) var savedRecipeList: FetchedResults<SavedRecipe>
+  
 
     var body: some View {
       NavigationView{

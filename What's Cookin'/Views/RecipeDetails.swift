@@ -15,15 +15,13 @@ struct Details: Codable, Hashable {
 
 
 struct RecipeDetails: View {
-  @Environment(\.managedObjectContext) var managedObjectContext
-  
-  @FetchRequest(
-      entity: SavedRecipe.entity(),
-      sortDescriptors: [
-          NSSortDescriptor(keyPath: \SavedRecipe.title, ascending: true),
-      ]
-  ) var savedRecipeList: FetchedResults<SavedRecipe>
-
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(
+        entity: SavedRecipe.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \SavedRecipe.title, ascending: true),
+        ]
+    ) var savedRecipeList: FetchedResults<SavedRecipe>
     @State var extraDetails = [Details]()
     var id: Int
     var title: String
