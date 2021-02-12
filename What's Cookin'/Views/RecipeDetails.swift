@@ -56,21 +56,21 @@ struct RecipeDetails: View {
                 }
               }
                 Text(title)
-                  .padding(.horizontal, 55)
+                  .padding(.horizontal, 52)
                   .padding(.bottom, 12.0)
                   .padding(.top, -42)
-                  .font(Font.custom("Righteous-Regular", size: 19))
+                  .font(Font.custom("ReemKufi-Regular", size: 22))
                   .multilineTextAlignment(.center)
 
 //              }
 
               VStack(alignment: .leading, spacing: 10)  {
                 Text("Ingredients:")
-                  .font(Font.custom("Righteous-Regular", size: 18))
+                  .font(Font.custom("Righteous-Regular", size: 17))
                 ForEach(extraDetails, id: \.self) { item in
                   ForEach(item.ingredients, id: \.self) { ingredient in
                     Text(" •  " + ingredient)
-                      .font(Font.custom("ReemKufi-Regular", size: 18))
+                      .font(Font.custom("ReemKufi-Regular", size: 17))
                       .padding(.horizontal)
                       .fixedSize(horizontal: false, vertical: true)
                   }
@@ -109,7 +109,7 @@ struct RecipeDetails: View {
               .padding(.leading, 10.0)
           
       .onAppear(perform: loadData)
-        }.navigationBarTitle("Recipe", displayMode: .inline).font(.title2)
+        }.navigationBarTitle("Recipe", displayMode: .inline)
       }.navigationViewStyle(StackNavigationViewStyle())
     }
 // check if recipe is already saved to favorites

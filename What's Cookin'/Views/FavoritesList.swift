@@ -33,9 +33,9 @@ struct FavoritesList: View {
                       URLImage(url: url) { image in
                         image
                           .resizable()
-                          .cornerRadius(8)
                           .frame(width: 75, height: 70)
-                          .padding(.horizontal, 8.0)
+                          .cornerRadius(8)
+                          .padding(.horizontal, 2.0)
                       }
                       Spacer()
                       VStack (alignment: .leading) {
@@ -52,17 +52,24 @@ struct FavoritesList: View {
               VStack {
                 Image("cooking")
                   .resizable()
-                  .frame(width: 175.0, height: 175.0)
+                  .frame(width: 170.0, height: 170.0)
                   .padding(.bottom, 15)
                 Text("No Favorite Recipes Yet!")
                   .font(Font.custom("Righteous-Regular", size: 22))
                   .padding(.bottom, 5)
-                Text("Use the heart button to save to your favorites.")
+                HStack {
+                  Text("Use the")
+                    .font(Font.custom("ReemKufi-Regular", size: 20))
+                  Image(systemName: "heart").foregroundColor(.red).font(Font.system(size: 26, weight: .semibold))
+                  Text("button")
+                    .font(Font.custom("ReemKufi-Regular", size: 20))
+                }
+                Text("to save to your favorites.")
                   .font(Font.custom("ReemKufi-Regular", size: 20))
                   .padding(.horizontal, 15)
                   .multilineTextAlignment(.center)
               }
-                .frame(minHeight: 620)
+              .frame(minWidth: 0, maxWidth: .infinity, minHeight: 620)
                 .padding(.top, 15)
                 .padding(.horizontal, 15)
                 .background(Color.white)
@@ -72,7 +79,7 @@ struct FavoritesList: View {
             }
             .padding(.vertical, 15.0)
             .padding(.horizontal, 20.0)
-      }.navigationBarTitle("Favorites", displayMode: .inline).font(.title2)
+      }.navigationBarTitle("Favorites", displayMode: .inline)
     }.navigationViewStyle(StackNavigationViewStyle())
   }
 

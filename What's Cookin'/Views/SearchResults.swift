@@ -74,7 +74,7 @@ struct SearchResults: View {
               .padding(.horizontal, 20.0)
             }
           }
-          .navigationBarTitle("Search Results", displayMode: .inline).font(.title2)
+          .navigationBarTitle("Search Results", displayMode: .inline)
       }
         .navigationViewStyle(StackNavigationViewStyle())
     }
