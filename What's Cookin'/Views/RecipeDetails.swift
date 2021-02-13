@@ -68,7 +68,7 @@ struct RecipeDetails: View {
               VStack(alignment: .leading, spacing: 10)  {
                 Text("Ingredients:")
                   .foregroundColor(Color.black)
-                  .font(Font.custom("Righteous-Regular", size: 17))
+                  .font(Font.custom("Righteous-Regular", size: 18))
                   .padding(.leading, 4)
                 ForEach(extraDetails, id: \.self) { item in
                   ForEach(item.ingredients, id: \.self) { ingredient in
@@ -88,12 +88,21 @@ struct RecipeDetails: View {
                   .font(Font.custom("Righteous-Regular", size: 18))
                   .padding(.leading, 4)
                 ForEach(extraDetails, id: \.self) { item in
+                  if item.instructions.isEmpty {
+                    Text("No instructions available for recipe.")
+                      .foregroundColor(Color.black)
+                      .font(Font.custom("ReemKufi-Regular", size: 18))
+                      .padding(.horizontal)
+                      .fixedSize(horizontal: false, vertical: true)
+                  } else {
                   ForEach(0..<item.instructions.count) {
                     Text("\($0 + 1).   " + item.instructions[$0])
                       .foregroundColor(Color.black)
                       .font(Font.custom("ReemKufi-Regular", size: 18))
                       .padding(.horizontal)
                       .fixedSize(horizontal: false, vertical: true)
+                  }
+                    
                   }
                 }
               }.frame(width: 350, alignment: .leading)

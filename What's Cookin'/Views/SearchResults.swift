@@ -10,14 +10,6 @@ import SwiftUI
 import URLImage
 import Combine
 
-struct Recipe: Codable, Identifiable, Hashable {
-  var id: Int
-  var title: String
-  var image: String
-  var additionalIngredients: [String]
-
-}
-
 struct SearchResults: View {
   @Binding var ingredients: [String]
   @State var recipes = [Recipe]()
@@ -58,10 +50,10 @@ struct SearchResults: View {
                       Spacer()
                       NavigationLink(destination: RecipeDetails(id: item.id, title: item.title, image: item.image)) {
                           FullRecipeButton()
-                      }.padding(.vertical)
+                      }.padding()
                     }
                     
-                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 425, maxHeight: 900)
+                }.frame(minWidth: 0, maxWidth: .infinity, maxHeight: 1000)
                   .background(Color.white)
                   .cornerRadius(15)
                   .padding(.top, 15.0)
