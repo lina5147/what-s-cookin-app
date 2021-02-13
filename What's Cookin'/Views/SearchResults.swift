@@ -33,6 +33,7 @@ struct SearchResults: View {
 
                     VStack {
                       Text(item.title)
+                        .foregroundColor(Color.black)
                         .padding(.horizontal)
                         .padding(.top, 20.0)
                         .font(Font.custom("ReemKufi-Regular", size: 22))
@@ -45,11 +46,13 @@ struct SearchResults: View {
                               .padding(.horizontal, 20.0)
                       })
                       Text("Additional Ingredients:")
+                        .foregroundColor(Color.black)
                         .font(Font.custom("Righteous-Regular", size: 18))
                         .fontWeight(.bold)
                         .padding(.vertical, 3.0)
                       ForEach(item.additionalIngredients, id: \.self) { item in
                         Text(item)
+                          .foregroundColor(Color.black)
                           .font(Font.custom("ReemKufi-Regular", size: 18))
                       }
                       Spacer()
@@ -67,6 +70,7 @@ struct SearchResults: View {
             if anyRecipes == false {
               VStack {
                 Text("No results found...")
+                .foregroundColor(Color.black)
               }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
               .background(Color.white)
               .cornerRadius(15)

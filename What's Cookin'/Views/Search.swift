@@ -48,6 +48,7 @@ struct Search: View {
             Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
             ScrollView{
               VStack{
+                VStack{
                 Text("Let's Explore!")
                   .font(Font.custom("ReemKufi-Regular", size: 25))
                   .padding(.top, 11.0)
@@ -55,6 +56,7 @@ struct Search: View {
                     .font(Font.custom("ReemKufi-Regular", size: 20))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16.0).padding(.top, 3.0)
+                }.foregroundColor(Color.black)
                 HStack {
                   IngredientBar(text: $text).padding(.vertical)
                   Button(action: {
@@ -68,6 +70,7 @@ struct Search: View {
                 }
                 Text("Ingredient List:")
                   .font(Font.custom("ReemKufi-Regular", size: 24))
+                  .foregroundColor(Color.black)
                   .padding(.bottom, 1)
                 Section {
                     ForEach(ingredients, id: \.self) { ingredient in

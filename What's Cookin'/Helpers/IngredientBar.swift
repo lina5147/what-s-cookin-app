@@ -15,7 +15,7 @@ struct IngredientBar: View {
             .font(Font.custom("ReemKufi-Regular", size: 24))
             .multilineTextAlignment(TextAlignment.center)
             .padding(7)
-            .background(Color(.systemGray6))
+            .background(Color(.lightGray).opacity(0.5))
             .cornerRadius(25)
             .padding(.leading, 8)
       }

@@ -49,6 +49,7 @@ struct FavoritesList: View {
               }.cornerRadius(15)
             }
             else {
+              ScrollView {
               VStack {
                 Image("cooking")
                   .resizable()
@@ -56,16 +57,20 @@ struct FavoritesList: View {
                   .padding(.bottom, 15)
                 Text("No Favorite Recipes Yet!")
                   .font(Font.custom("Righteous-Regular", size: 22))
+                  .foregroundColor(Color.black)
                   .padding(.bottom, 5)
                 HStack {
                   Text("Use the")
                     .font(Font.custom("ReemKufi-Regular", size: 20))
+                    .foregroundColor(Color.black)
                   Image(systemName: "heart").foregroundColor(.red).font(Font.system(size: 26, weight: .semibold))
                   Text("button")
                     .font(Font.custom("ReemKufi-Regular", size: 20))
+                    .foregroundColor(Color.black)
                 }
                 Text("to save to your favorites.")
                   .font(Font.custom("ReemKufi-Regular", size: 20))
+                  .foregroundColor(Color.black)
                   .padding(.horizontal, 15)
                   .multilineTextAlignment(.center)
               }
@@ -74,8 +79,9 @@ struct FavoritesList: View {
                 .padding(.horizontal, 15)
                 .background(Color.white)
                 .cornerRadius(15)
+              }
             }
-              Spacer()
+//              Spacer()
             }
             .padding(.vertical, 15.0)
             .padding(.horizontal, 20.0)
