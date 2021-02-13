@@ -53,7 +53,7 @@ struct FavoritesList: View {
               VStack {
                 Image("cooking")
                   .resizable()
-                  .frame(width: 170.0, height: 170.0)
+                  .frame(width: 160.0, height: 160.0)
                   .padding(.bottom, 15)
                 Text("No Favorite Recipes Yet!")
                   .font(Font.custom("Righteous-Regular", size: 22))
@@ -74,7 +74,7 @@ struct FavoritesList: View {
                   .padding(.horizontal, 15)
                   .multilineTextAlignment(.center)
               }
-              .frame(minWidth: 0, maxWidth: .infinity, minHeight: 620)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 620)
                 .padding(.top, 15)
                 .padding(.horizontal, 15)
                 .background(Color.white)

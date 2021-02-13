@@ -71,7 +71,7 @@ struct SearchResults: View {
               VStack {
                 Text("No results found...")
                 .foregroundColor(Color.black)
-              }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 550)
+              }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 635)
               .background(Color.white)
               .cornerRadius(15)
               .padding(.top, 15.0)
