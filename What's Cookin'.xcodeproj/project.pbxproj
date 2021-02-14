@@ -24,6 +24,7 @@
 		4A9D583A25D44A750053EF7A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D583925D44A750053EF7A /* PersistenceController.swift */; };
 		4A9D584625D5F0AC0053EF7A /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D584125D5EEE40053EF7A /* Righteous-Regular.ttf */; };
 		4A9D585925D88C600053EF7A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D585825D88C600053EF7A /* Recipe.swift */; };
+		4A9D585C25D894080053EF7A /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D585B25D894080053EF7A /* Details.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		4A9D583925D44A750053EF7A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		4A9D584125D5EEE40053EF7A /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
 		4A9D585825D88C600053EF7A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		4A9D585B25D894080053EF7A /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				4A9D583525D3C5800053EF7A /* Main.xcdatamodeld */,
 				4A9D585825D88C600053EF7A /* Recipe.swift */,
+				4A9D585B25D894080053EF7A /* Details.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				4A1B6D7D25CA24CD00C8CB28 /* SearchResults.swift in Sources */,
 				4A9D583725D3C5800053EF7A /* Main.xcdatamodeld in Sources */,
 				4A60509725CBA05900EACCFF /* RecipeDetails.swift in Sources */,
+				4A9D585C25D894080053EF7A /* Details.swift in Sources */,
 				4A60509A25CBA0C800EACCFF /* FullRecipeButton.swift in Sources */,
 				4A9D583A25D44A750053EF7A /* PersistenceController.swift in Sources */,
 				4A42473325C8E2B100E750CB /* What_s_Cookin_App.swift in Sources */,

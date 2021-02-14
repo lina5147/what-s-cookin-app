@@ -8,12 +8,6 @@
 import SwiftUI
 import URLImage
 
-struct Details: Codable, Hashable {
-  var ingredients: [String]
-  var instructions: [String]
-}
-
-
 struct RecipeDetails: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(
@@ -34,13 +28,11 @@ struct RecipeDetails: View {
         ScrollView{
           VStack{
             VStack{
-//              ZStack(alignment: .topTrailing){
               let url = URL(string: image)!
               URLImage(url: url, content: { image in
                   image
                       .resizable()
                       .aspectRatio(contentMode: .fit)
-                
               })
               HStack {
                 Spacer()
@@ -51,7 +43,6 @@ struct RecipeDetails: View {
                 } else {
                   Button(action: removeFromFavorites) {
                     Image(systemName: "heart.fill").foregroundColor(.red).padding( 6.0).font(Font.system(size: 30, weight: .semibold))
-
                   }
                 }
               }
@@ -62,53 +53,50 @@ struct RecipeDetails: View {
                   .padding(.top, -42)
                   .font(Font.custom("ReemKufi-Regular", size: 22))
                   .multilineTextAlignment(.center)
-
-//              }
-
-              VStack(alignment: .leading, spacing: 10)  {
-                Text("Ingredients:")
-                  .foregroundColor(Color.black)
-                  .font(Font.custom("Righteous-Regular", size: 18))
-                  .padding(.leading, 4)
-                ForEach(extraDetails, id: \.self) { item in
-                  ForEach(item.ingredients, id: \.self) { ingredient in
-                    Text(" •  " + ingredient)
-                      .foregroundColor(Color.black)
-                      .font(Font.custom("ReemKufi-Regular", size: 17))
-                      .padding(.horizontal)
-                      .fixedSize(horizontal: false, vertical: true)
-                  }
-                }
-              }.frame(width: 350, alignment: .leading)
-
               
-              VStack(alignment: .leading, spacing: 20)  {
-                Text("Instructions:")
-                  .foregroundColor(Color.black)
-                  .font(Font.custom("Righteous-Regular", size: 18))
-                  .padding(.leading, 4)
-                ForEach(extraDetails, id: \.self) { item in
-                  if item.instructions.isEmpty {
-                    Text("No instructions available for recipe.")
-                      .foregroundColor(Color.black)
-                      .font(Font.custom("ReemKufi-Regular", size: 18))
-                      .padding(.horizontal)
-                      .fixedSize(horizontal: false, vertical: true)
-                  } else {
-                  ForEach(0..<item.instructions.count) {
-                    Text("\($0 + 1).   " + item.instructions[$0])
-                      .foregroundColor(Color.black)
-                      .font(Font.custom("ReemKufi-Regular", size: 18))
-                      .padding(.horizontal)
-                      .fixedSize(horizontal: false, vertical: true)
+              if !extraDetails.isEmpty {
+                VStack(alignment: .leading, spacing: 10)  {
+                  Text("Ingredients:")
+                    .foregroundColor(Color.black)
+                    .font(Font.custom("Righteous-Regular", size: 18))
+                    .padding(.leading, 4)
+                  ForEach(extraDetails, id: \.self) { item in
+                    ForEach(item.ingredients, id: \.self) { ingredient in
+                      Text(" •  " + ingredient)
+                        .foregroundColor(Color.black)
+                        .font(Font.custom("ReemKufi-Regular", size: 17))
+                        .padding(.horizontal)
+                        .fixedSize(horizontal: false, vertical: true)
+                    }
                   }
+                }.frame(width: 350, alignment: .leading)
+                
+                VStack(alignment: .leading, spacing: 20)  {
+                  Text("Instructions:")
+                    .foregroundColor(Color.black)
+                    .font(Font.custom("Righteous-Regular", size: 18))
+                    .padding(.leading, 4)
+                  ForEach(extraDetails, id: \.self) { item in
+                    if item.instructions.isEmpty {
+                      Text("No instructions available for recipe.")
+                        .foregroundColor(Color.black)
+                        .font(Font.custom("ReemKufi-Regular", size: 18))
+                        .padding(.horizontal)
+                        .fixedSize(horizontal: false, vertical: true)
+                    } else {
+                    ForEach(0..<item.instructions.count) {
+                      Text("\($0 + 1).   " + item.instructions[$0])
+                        .foregroundColor(Color.black)
+                        .font(Font.custom("ReemKufi-Regular", size: 18))
+                        .padding(.horizontal)
+                        .fixedSize(horizontal: false, vertical: true)
+                    }
                     
                   }
                 }
               }.frame(width: 350, alignment: .leading)
-//              .background(Color.gray.opacity(0.1))
               .padding()
-              
+              }
               Spacer()
 
             }
@@ -117,6 +105,7 @@ struct RecipeDetails: View {
                 .cornerRadius(15)
                 .padding(.top, 15.0)
                 .padding(.leading, 20.0)
+            
           }
               .frame(minWidth: 0, maxWidth: .infinity, minHeight: 700)
               .background(Color.yellow.opacity(0.9))
