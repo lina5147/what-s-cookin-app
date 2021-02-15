@@ -22,6 +22,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>PetitFormalScript-Regular.ttf</string>
 		<string>Righteous-Regular.ttf</string>
 		<string>ReemKufi-Regular.ttf</string>
 	</array>

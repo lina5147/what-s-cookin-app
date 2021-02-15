@@ -11,13 +11,21 @@ struct SplashScreen: View {
     var body: some View {
       ZStack {
         Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all)
-        Text("What's Cookin'")
-          .font(.largeTitle)
-          .foregroundColor(.white)
-//          .offset(x: 20,
-//                  y: 0)
-        
-  //      Spacer()
+        VStack (spacing: 3){
+            Image("chefHat")
+              .resizable()
+              .scaledToFit()
+              .frame(width: 170.0, height:170)
+              .opacity(0.7)
+            VStack(spacing: -8){
+                Text("What's")
+                Text("Cookin'")
+              }
+              .font(Font.custom("PetitFormalScript-Regular", size: 55))
+              .font(.largeTitle)
+              .foregroundColor(.black)
+              .opacity(0.7)
+        }
       }
     }
 }

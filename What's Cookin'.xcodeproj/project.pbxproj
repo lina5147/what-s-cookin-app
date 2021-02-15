@@ -26,6 +26,7 @@
 		4A9D585925D88C600053EF7A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D585825D88C600053EF7A /* Recipe.swift */; };
 		4A9D585C25D894080053EF7A /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D585B25D894080053EF7A /* Details.swift */; };
 		4A9D588225DAE6020053EF7A /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D588125DAE6020053EF7A /* SplashScreen.swift */; };
+		4A9D588525DAE99C0053EF7A /* PetitFormalScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D588425DAE99C0053EF7A /* PetitFormalScript-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		4A9D585825D88C600053EF7A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		4A9D585B25D894080053EF7A /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		4A9D588125DAE6020053EF7A /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		4A9D588425DAE99C0053EF7A /* PetitFormalScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PetitFormalScript-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				4A1B6D8425CA310400C8CB28 /* Helpers */,
 				4A42473625C8E2B400E750CB /* Assets.xcassets */,
 				4A42473B25C8E2B400E750CB /* Info.plist */,
+				4A9D588425DAE99C0053EF7A /* PetitFormalScript-Regular.ttf */,
 				4A9D584125D5EEE40053EF7A /* Righteous-Regular.ttf */,
 				4A9D57E725D347FA0053EF7A /* ReemKufi-Regular.ttf */,
 				4A42473825C8E2B400E750CB /* Preview Content */,
@@ -204,6 +207,7 @@
 				4A42473725C8E2B400E750CB /* Assets.xcassets in Resources */,
 				4A9D584625D5F0AC0053EF7A /* Righteous-Regular.ttf in Resources */,
 				4A9D57E825D347FA0053EF7A /* ReemKufi-Regular.ttf in Resources */,
+				4A9D588525DAE99C0053EF7A /* PetitFormalScript-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
