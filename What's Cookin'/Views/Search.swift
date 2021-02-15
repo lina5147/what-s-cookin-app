@@ -103,12 +103,7 @@ struct Search: View {
                       ingredients = [String]()
                       text = ""
                     }){
-                      Text("Clear")
-                          .font(Font.custom("ReemKufi-Regular", size: 17))
-                          .frame(width: 160, height: 50)
-                          .foregroundColor(Color.black)
-                          .border(Color.yellow.opacity(0.6), width: 5)
-                          .cornerRadius(10)
+                      ClearButton()
                     }
                     NavigationLink(destination: SearchResults(ingredients: self.$ingredients)) {
                         SearchButton()
