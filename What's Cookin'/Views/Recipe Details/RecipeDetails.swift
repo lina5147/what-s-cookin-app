@@ -72,11 +72,13 @@ struct RecipeDetails: View {
                     .padding(.leading, 4)
                   ForEach(extraDetails, id: \.self) { item in
                     ForEach(item.ingredients, id: \.self) { ingredient in
-                      Text(" •  " + ingredient)
-                        .foregroundColor(Color.black)
+                      HStack(alignment: .top){
+                        Text(" • ")
+                        Text(ingredient)
+                          .fixedSize(horizontal: false, vertical: true)
+                      } .foregroundColor(Color.black)
                         .font(Font.custom("ReemKufi-Regular", size: 17))
                         .padding(.horizontal)
-                        .fixedSize(horizontal: false, vertical: true)
                     }
                   }
                 }.frame(width: 350, alignment: .leading)
