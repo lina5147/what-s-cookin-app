@@ -20,6 +20,7 @@ struct RecipeDetails: View {
     var id: Int
     var title: String
     var image: String
+    @State var dailyLimit = false
   
   
     var body: some View {
@@ -61,6 +62,7 @@ struct RecipeDetails: View {
                   .padding(.top, -42)
                   .font(Font.custom("ReemKufi-Regular", size: 22))
                   .multilineTextAlignment(.center)
+              if dailyLimit {Text("Daily limit Reached")}
               
               if !extraDetails.isEmpty {
                 VStack(alignment: .leading, spacing: 10)  {
@@ -155,7 +157,7 @@ struct RecipeDetails: View {
   }
   
   func loadData() {
-
+    dailyLimit = false
     guard let url = URL(string: "http://127.0.0.1:5000/search/\(self.id)") else {
         print("Invalid URL")
         return
@@ -174,6 +176,7 @@ struct RecipeDetails: View {
         }
       }
       print("Fetch failed: \(error?.localizedDescription ?? "Daily Points used for Spoonacular API")")
+      dailyLimit = true
     }.resume()
   }
 }

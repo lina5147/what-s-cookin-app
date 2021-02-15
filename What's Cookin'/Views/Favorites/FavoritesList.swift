@@ -33,8 +33,9 @@ struct FavoritesList: View {
                         URLImage(url: url) { image in
                           image
                             .resizable()
-                            .frame(width: 75, height: 70)
+                            .scaledToFit()
                             .cornerRadius(8)
+                            .frame(width: 80, height: 80)
                             .padding(.horizontal, 2.0)
                         }
                         Spacer()

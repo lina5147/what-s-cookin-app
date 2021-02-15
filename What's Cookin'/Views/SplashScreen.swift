@@ -16,16 +16,20 @@ struct SplashScreen: View {
               .resizable()
               .scaledToFit()
               .frame(width: 170.0, height:170)
-              .opacity(0.7)
-            VStack(spacing: -8){
+              .foregroundColor(Color.white)
+              .opacity(0.8)
+
+            VStack(spacing: -10){
                 Text("What's")
                 Text("Cookin'")
               }
-              .font(Font.custom("PetitFormalScript-Regular", size: 55))
+              .font(Font.custom("PetitFormalScript-Regular", size: 60))
               .font(.largeTitle)
-              .foregroundColor(.black)
-              .opacity(0.7)
-        }
+              .foregroundColor(.white)
+              .opacity(0.9)
+        }.offset(
+        x: 0,
+          y: -40)
       }
     }
 }
