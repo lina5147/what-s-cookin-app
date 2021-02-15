@@ -158,7 +158,7 @@ struct RecipeDetails: View {
   
   func loadData() {
     dailyLimit = false
-    guard let url = URL(string: "http://127.0.0.1:5000/search/\(self.id)") else {
+    guard let url = URL(string: "https://whatscookin-api.herokuapp.com/search/\(self.id)") else {
         print("Invalid URL")
         return
     }
