@@ -25,6 +25,7 @@
 		4A9D584625D5F0AC0053EF7A /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D584125D5EEE40053EF7A /* Righteous-Regular.ttf */; };
 		4A9D585925D88C600053EF7A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D585825D88C600053EF7A /* Recipe.swift */; };
 		4A9D585C25D894080053EF7A /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D585B25D894080053EF7A /* Details.swift */; };
+		4A9D588225DAE6020053EF7A /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D588125DAE6020053EF7A /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		4A9D584125D5EEE40053EF7A /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
 		4A9D585825D88C600053EF7A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		4A9D585B25D894080053EF7A /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		4A9D588125DAE6020053EF7A /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				4A1B6D7C25CA24CD00C8CB28 /* SearchResults.swift */,
 				4A60509625CBA05900EACCFF /* RecipeDetails.swift */,
 				4A9D57D425D24BED0053EF7A /* FavoritesList.swift */,
+				4A9D588125DAE6020053EF7A /* SplashScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			files = (
 				4A1B6D8625CA314D00C8CB28 /* SearchButton.swift in Sources */,
 				4A42473525C8E2B100E750CB /* ContentView.swift in Sources */,
+				4A9D588225DAE6020053EF7A /* SplashScreen.swift in Sources */,
 				4A1B6D8C25CB0E0A00C8CB28 /* IngredientBar.swift in Sources */,
 				4A9D585925D88C600053EF7A /* Recipe.swift in Sources */,
 				4A1B6D8125CA2E9400C8CB28 /* Search.swift in Sources */,
