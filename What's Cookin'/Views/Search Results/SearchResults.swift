@@ -22,7 +22,6 @@ struct SearchResults: View {
             VStack {
               if !recipes.isEmpty {
                 ForEach(recipes, id: \.id) { item in
-
                     VStack {
                       Text(item.title)
                         .foregroundColor(Color.black)

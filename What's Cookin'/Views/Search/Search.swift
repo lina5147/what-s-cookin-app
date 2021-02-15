@@ -8,47 +8,16 @@
 import SwiftUI
 
 struct Search: View {
-      @State private var ingredients = [String]()
-      @State private var text = ""
+    @State private var ingredients = [String]()
+    @State private var text = ""
 
-  
-//  init() {
-//          let appearance = UINavigationBarAppearance()
-//
-//          // this overrides everything you have set up earlier.
-//          appearance.configureWithTransparentBackground()
-//
-//          // this only applies to big titles
-//          appearance.largeTitleTextAttributes = [
-//              .font : UIFont.systemFont(ofSize: 20),
-//              NSAttributedString.Key.foregroundColor : UIColor.black
-//          ]
-//          // this only applies to small titles
-//          appearance.titleTextAttributes = [
-//              .font : UIFont.systemFont(ofSize: 25),
-//              NSAttributedString.Key.foregroundColor : UIColor.black
-//          ]
-//
-//          //In the following two lines you make sure that you apply the style for good
-//          UINavigationBar.appearance().scrollEdgeAppearance = appearance
-//          UINavigationBar.appearance().standardAppearance = appearance
-//
-//          // This property is not present on the UINavigationBarAppearance
-//          // object for some reason and you have to leave it til the end
-//          UINavigationBar.appearance().tintColor = .white
-//
-//      }
-  
-    
-      var body: some View {
-        NavigationView{
-          
-
-          ZStack {
-            Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
-            ScrollView{
+    var body: some View {
+      NavigationView{
+        ZStack {
+          Color(UIColor.systemTeal).edgesIgnoringSafeArea(.all).opacity(0.9)
+          ScrollView{
+            VStack{
               VStack{
-                VStack{
                 Text("Let's Explore!")
                   .font(Font.custom("ReemKufi-Regular", size: 25))
                   .padding(.top, 11.0)
@@ -56,10 +25,10 @@ struct Search: View {
                     .font(Font.custom("ReemKufi-Regular", size: 20))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16.0).padding(.top, 3.0)
-                }.foregroundColor(Color.black)
-                HStack {
-                  IngredientBar(text: $text).padding(.vertical)
-                  Button(action: {
+              }.foregroundColor(Color.black)
+              HStack {
+                IngredientBar(text: $text).padding(.vertical)
+                Button(action: {
                     self.addIngredient()
                   }) {
                     Image(systemName: "plus.circle.fill")
@@ -67,32 +36,32 @@ struct Search: View {
                       .foregroundColor(.blue)
                       .padding(.trailing, 10)
                   }
-                }
-                Text("Ingredient List:")
-                  .font(Font.custom("ReemKufi-Regular", size: 24))
-                  .foregroundColor(Color.black)
-                  .padding(.bottom, 1)
-                Section {
-                    ForEach(ingredients, id: \.self) { ingredient in
-                      Section {
-                      HStack {
-                        Button(action: {
-                          self.deleteIngredient(ingredient: ingredient)
-                        }){
+              }
+              Text("Ingredient List:")
+                .font(Font.custom("ReemKufi-Regular", size: 24))
+                .foregroundColor(Color.black)
+                .padding(.bottom, 1)
+              Section {
+                ForEach(ingredients, id: \.self) { ingredient in
+                  Section {
+                    HStack {
+                      Button(action: {
+                        self.deleteIngredient(ingredient: ingredient)
+                      }){
                         Text(ingredient)
                             .font(Font.custom("ReemKufi-Regular", size: 24))
                             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 40)
                             .foregroundColor(Color.black)
-                          Spacer()
-                          Image(systemName: "multiply.circle")
+                        Spacer()
+                        Image(systemName: "multiply.circle")
                                     .font(.title)
                                     .foregroundColor(.red)
                                     .padding(.trailing, 10)
-                        }.background(Color.yellow.opacity(0.3))
+                      }
+                         .background(Color.yellow.opacity(0.3))
                          .cornerRadius(10)
                          .padding(.bottom, 1.0)
                          .padding(.horizontal, 10.0)
-                        
                       }
                     }
                   }
@@ -109,15 +78,15 @@ struct Search: View {
                         SearchButton()
                     }
                 }.padding(.bottom)
-              }.background(Color.white)
+              }
+               .background(Color.white)
                .cornerRadius(15)
-              .padding(.horizontal, 20.0)
-              .padding(.top, 15.0)
+               .padding(.horizontal, 20.0)
+               .padding(.top, 15.0)
                .frame(minHeight: 650)
-            }
+          }
         }
           .navigationBarTitle("Search", displayMode: .inline)
-          
       }
         .navigationViewStyle(StackNavigationViewStyle())
     }
