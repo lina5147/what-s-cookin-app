@@ -17,7 +17,7 @@ struct SplashScreen: View {
               .scaledToFit()
               .frame(width: 170.0, height:170)
               .foregroundColor(Color.white)
-              .opacity(0.8)
+              .opacity(0.9)
 
             VStack(spacing: -10){
                 Text("What's")
