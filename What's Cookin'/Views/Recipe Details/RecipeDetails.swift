@@ -28,12 +28,20 @@ struct RecipeDetails: View {
         ScrollView{
           VStack{
             VStack{
+              ZStack (alignment: .bottomTrailing){
               let url = URL(string: image)!
               URLImage(url: url, content: { image in
                   image
                       .resizable()
                       .aspectRatio(contentMode: .fit)
               })
+                if !extraDetails.isEmpty{
+                  Text("Credit: \(extraDetails[0].credit)")
+                    .font(Font.custom("ReemKufi-Regular", size: 14))
+                    .padding(.horizontal, 2)
+                    .background(Color.white).opacity(0.5)
+                }
+              }
               HStack {
                 Spacer()
                 if !checkIfItemExist(id: self.id) {
@@ -148,7 +156,7 @@ struct RecipeDetails: View {
   
   func loadData() {
 
-    guard let url = URL(string: "https://whatscookin-api.herokuapp.com/search/\(self.id)") else {
+    guard let url = URL(string: "http://127.0.0.1:5000/search/\(self.id)") else {
         print("Invalid URL")
         return
     }
@@ -159,13 +167,13 @@ struct RecipeDetails: View {
         if let decodedResponse = try? JSONDecoder().decode([Details].self, from: data) {
           DispatchQueue.main.async {
             self.extraDetails = decodedResponse
-//            print(decodedResponse)
+            print(decodedResponse)
 //            print(extraDetails)
           }
           return
         }
       }
-      print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+      print("Fetch failed: \(error?.localizedDescription ?? "Daily Points used for Spoonacular API")")
     }.resume()
   }
 }

@@ -11,4 +11,5 @@ import SwiftUI
 struct Details: Codable, Hashable {
   var ingredients: [String]
   var instructions: [String]
+  var credit: String
 }
