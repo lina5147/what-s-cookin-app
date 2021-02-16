@@ -14,6 +14,7 @@ struct SearchResults: View {
   @Binding var ingredients: [String]
   @State var recipes = [Recipe]()
   @State var anyRecipes = true
+  @State var dailyLimit = false
   
     var body: some View {
         ZStack {
@@ -60,6 +61,13 @@ struct SearchResults: View {
               }}.onAppear(perform: loadData)
             if anyRecipes == false {
               NoResults()
+            }else if dailyLimit {
+              SpoonacularLimit()
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 635)
+                .background(Color.white)
+                .cornerRadius(15)
+                .padding(.top, 15.0)
+                .padding(.horizontal, 20.0)
             }
           }
           .navigationBarTitle("Search Results", displayMode: .inline)
@@ -68,6 +76,7 @@ struct SearchResults: View {
     }
   
   func loadData() {
+    dailyLimit = false
     if ingredients.isEmpty {
       anyRecipes = false
       return
@@ -102,7 +111,8 @@ struct SearchResults: View {
           return
         }
       }
-      print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+      print("Fetch failed: \(error?.localizedDescription ?? "Daily limit reached for Spoonacular request")")
+      dailyLimit = true
     }.resume()
   }
 }

@@ -12,6 +12,7 @@ struct NoResults: View {
       VStack {
         Image("SadMagnifyingGlass")
           .resizable()
+          .scaledToFit()
           .frame(width: 145.0, height: 150.0)
           .padding(.bottom, 20)
         Text("No results found")

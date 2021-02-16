@@ -10,15 +10,15 @@ import SwiftUI
 struct SpoonacularLimit: View {
     var body: some View {
       VStack {
+        Image("spoonacular-logo")
+          .resizable()
+          .scaledToFit()
+          .frame(width: 90, height: 90)
         Text("Daily limit reached for Spoonacular request.\nPlease try again tomorrow.")
           .foregroundColor(Color.black)
             .font(Font.custom("ReemKufi-Regular", size: 17))
           .padding()
           .multilineTextAlignment(.center)
-        Image("spoonacular-logo")
-          .resizable()
-          .scaledToFit()
-          .frame(width: 80, height: 80)
       }
     }
 }

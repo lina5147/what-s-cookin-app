@@ -12,6 +12,7 @@ struct NoFavorites: View {
       VStack {
         Image("cooking")
           .resizable()
+          .scaledToFit()
           .frame(width: 145.0, height: 145.0)
           .padding(.bottom, 20)
         Text("No Favorite Recipes Yet!")
