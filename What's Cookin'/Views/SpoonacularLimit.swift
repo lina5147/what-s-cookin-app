@@ -14,7 +14,7 @@ struct SpoonacularLimit: View {
           .resizable()
           .scaledToFit()
           .frame(width: 90, height: 90)
-        Text("Daily limit reached for Spoonacular request.\nPlease try again tomorrow.")
+        Text("Daily limit reached for Spoonacular requests.\nPlease try again tomorrow.")
           .foregroundColor(Color.black)
             .font(Font.custom("ReemKufi-Regular", size: 17))
           .padding()

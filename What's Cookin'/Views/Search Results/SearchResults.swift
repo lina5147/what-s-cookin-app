@@ -111,7 +111,7 @@ struct SearchResults: View {
           return
         }
       }
-      print("Fetch failed: \(error?.localizedDescription ?? "Daily limit reached for Spoonacular request")")
+      print("Fetch failed: \(error?.localizedDescription ?? "Daily limit reached for Spoonacular requests")")
       dailyLimit = true
     }.resume()
   }
