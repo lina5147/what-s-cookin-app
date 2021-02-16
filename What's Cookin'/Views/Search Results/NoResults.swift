@@ -24,7 +24,7 @@ struct NoResults: View {
           .foregroundColor(Color.black)
           .padding(.horizontal, 15)
           .multilineTextAlignment(.center)
-      }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 635)
+      }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 525)
       .background(Color.white)
       .cornerRadius(15)
       .padding(.top, 15.0)

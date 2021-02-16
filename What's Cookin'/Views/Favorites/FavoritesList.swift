@@ -50,9 +50,7 @@ struct FavoritesList: View {
                 }.cornerRadius(15)
               }
               else {
-                ScrollView {
                   NoFavorites()
-                }
               }
           }
           .padding(.vertical, 15.0)

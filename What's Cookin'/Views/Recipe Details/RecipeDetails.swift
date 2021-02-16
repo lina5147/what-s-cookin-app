@@ -64,9 +64,7 @@ struct RecipeDetails: View {
                   .multilineTextAlignment(.center)
               if dailyLimit {
                 SpoonacularLimit()
-              }
-              
-              if !extraDetails.isEmpty {
+              } else if !extraDetails.isEmpty {
                 VStack(alignment: .leading, spacing: 10)  {
                   Text("Ingredients:")
                     .foregroundColor(Color.black)

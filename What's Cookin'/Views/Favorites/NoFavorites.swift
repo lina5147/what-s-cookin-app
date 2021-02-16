@@ -34,7 +34,7 @@ struct NoFavorites: View {
           .padding(.horizontal, 15)
           .multilineTextAlignment(.center)
       }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 620)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 510)
         .padding(.top, 15)
         .padding(.horizontal, 15)
         .background(Color.white)
