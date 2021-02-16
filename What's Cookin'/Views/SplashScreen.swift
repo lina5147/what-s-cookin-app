@@ -15,7 +15,7 @@ struct SplashScreen: View {
             Image("chefHat")
               .resizable()
               .scaledToFit()
-              .frame(width: 170.0, height:170)
+              .frame(width: 150.0, height: 150.0)
               .foregroundColor(Color.white)
               .opacity(0.9)
 
@@ -23,7 +23,7 @@ struct SplashScreen: View {
                 Text("What's")
                 Text("Cookin'")
               }
-              .font(Font.custom("PetitFormalScript-Regular", size: 60))
+              .font(Font.custom("PetitFormalScript-Regular", size: 50))
               .font(.largeTitle)
               .foregroundColor(.white)
               .opacity(0.9)
