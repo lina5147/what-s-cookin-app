@@ -97,13 +97,10 @@ struct Search: View {
         self.ingredients.append(trimmed.lowercased())
       }
       self.text = ""
-      print(ingredients)
     }
     
     func deleteIngredient(ingredient: String) {
-//      print(ingredient)
       ingredients = ingredients.filter(){$0 != ingredient}
-//      print(ingredients)
     }
 }
 

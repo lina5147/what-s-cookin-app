@@ -164,15 +164,12 @@ struct RecipeDetails: View {
         print("Invalid URL")
         return
     }
-    print(url)
     let request = URLRequest(url: url)
     URLSession.shared.dataTask(with: request) { data, response, error in
       if let data = data {
         if let decodedResponse = try? JSONDecoder().decode([Details].self, from: data) {
           DispatchQueue.main.async {
             self.extraDetails = decodedResponse
-            print(decodedResponse)
-//            print(extraDetails)
           }
           return
         }
