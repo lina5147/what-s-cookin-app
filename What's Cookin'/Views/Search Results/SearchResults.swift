@@ -88,7 +88,6 @@ struct SearchResults: View {
     
     //takes care of spaces
     let newString = ingredientsString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-//    print(newString)
     guard let url = URL(string: "https://whatscookin-api.herokuapp.com/search?ingredients=\(newString)") else {
         print("Invalid URL")
         return
@@ -106,7 +105,6 @@ struct SearchResults: View {
             } else {
               anyRecipes = true
             }
-//            print(decodedResponse)
           }
           return
         }
