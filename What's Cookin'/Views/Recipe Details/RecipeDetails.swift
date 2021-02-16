@@ -62,7 +62,9 @@ struct RecipeDetails: View {
                   .padding(.top, -42)
                   .font(Font.custom("ReemKufi-Regular", size: 22))
                   .multilineTextAlignment(.center)
-              if dailyLimit {Text("Daily limit Reached")}
+              if dailyLimit {
+                SpoonacularLimit()
+              }
               
               if !extraDetails.isEmpty {
                 VStack(alignment: .leading, spacing: 10)  {
@@ -174,7 +176,7 @@ struct RecipeDetails: View {
           return
         }
       }
-      print("Fetch failed: \(error?.localizedDescription ?? "Daily Points used for Spoonacular API")")
+      print("Fetch failed: \(error?.localizedDescription ?? "Daily limit reached for Spoonacular request")")
       dailyLimit = true
     }.resume()
   }

@@ -30,6 +30,7 @@
 		4A9D588825DAF0870053EF7A /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D588725DAF0870053EF7A /* ClearButton.swift */; };
 		4A9D588B25DAF13F0053EF7A /* NoResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D588A25DAF13F0053EF7A /* NoResults.swift */; };
 		4A9D589925DAF5FF0053EF7A /* NoFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D589825DAF5FF0053EF7A /* NoFavorites.swift */; };
+		4A9D589E25DB474A0053EF7A /* SpoonacularLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D589D25DB474A0053EF7A /* SpoonacularLimit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		4A9D588725DAF0870053EF7A /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		4A9D588A25DAF13F0053EF7A /* NoResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResults.swift; sourceTree = "<group>"; };
 		4A9D589825DAF5FF0053EF7A /* NoFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavorites.swift; sourceTree = "<group>"; };
+		4A9D589D25DB474A0053EF7A /* SpoonacularLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonacularLimit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				4A42473425C8E2B100E750CB /* ContentView.swift */,
 				4A9D588125DAE6020053EF7A /* SplashScreen.swift */,
+				4A9D589D25DB474A0053EF7A /* SpoonacularLimit.swift */,
 				4A9D588D25DAF1F80053EF7A /* Search */,
 				4A9D588E25DAF2180053EF7A /* Search Results */,
 				4A9D589025DAF25F0053EF7A /* Recipe Details */,
@@ -266,6 +269,7 @@
 				4A9D585925D88C600053EF7A /* Recipe.swift in Sources */,
 				4A1B6D8125CA2E9400C8CB28 /* Search.swift in Sources */,
 				4A1B6D7D25CA24CD00C8CB28 /* SearchResults.swift in Sources */,
+				4A9D589E25DB474A0053EF7A /* SpoonacularLimit.swift in Sources */,
 				4A9D588825DAF0870053EF7A /* ClearButton.swift in Sources */,
 				4A9D583725D3C5800053EF7A /* Main.xcdatamodeld in Sources */,
 				4A9D589925DAF5FF0053EF7A /* NoFavorites.swift in Sources */,
