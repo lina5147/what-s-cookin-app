@@ -67,7 +67,7 @@ struct SearchResults: View {
                 .background(Color.white)
                 .cornerRadius(15)
                 .padding(.top, 15.0)
-                .padding(.horizontal, 20.0)
+                .padding(.horizontal, 15.0)
             }
           }
           .navigationBarTitle("Search Results", displayMode: .inline)
