@@ -19,10 +19,10 @@ struct Search: View {
             VStack{
               VStack{
                 Text("Let's Explore!")
-                  .font(Font.custom("ReemKufi-Regular", size: 25))
+                  .font(Font.custom("ReemKufi-Regular", size: 22))
                   .padding(.top, 11.0)
                 Text("Add ingredients to the ingredient list. When you are ready to see what recipes we have for the ingredients you have listed, tap on search for recipes.")
-                    .font(Font.custom("ReemKufi-Regular", size: 20))
+                    .font(Font.custom("ReemKufi-Regular", size: 18))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16.0).padding(.top, 3.0)
               }.foregroundColor(Color.black)
@@ -37,8 +37,8 @@ struct Search: View {
                       .padding(.trailing, 10)
                   }
               }
-              Text("Ingredient List:")
-                .font(Font.custom("ReemKufi-Regular", size: 24))
+              Text("Ingredient List:  ")
+                .font(Font.custom("ReemKufi-Regular", size: 22))
                 .foregroundColor(Color.black)
                 .padding(.bottom, 1)
               Section {
@@ -49,7 +49,7 @@ struct Search: View {
                         self.deleteIngredient(ingredient: ingredient)
                       }){
                         Text(ingredient)
-                            .font(Font.custom("ReemKufi-Regular", size: 24))
+                            .font(Font.custom("ReemKufi-Regular", size: 20))
                             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 40)
                             .foregroundColor(Color.black)
                         Spacer()
@@ -77,13 +77,13 @@ struct Search: View {
                     NavigationLink(destination: SearchResults(ingredients: self.$ingredients)) {
                         SearchButton()
                     }
-                }.padding(.bottom)
+                }.padding(.bottom, 8.0)
               }
                .background(Color.white)
                .cornerRadius(15)
                .padding(.horizontal, 20.0)
                .padding(.top, 15.0)
-               .frame(minHeight: 650)
+               .frame(minHeight: 540)
           }
         }
           .navigationBarTitle("Search", displayMode: .inline)

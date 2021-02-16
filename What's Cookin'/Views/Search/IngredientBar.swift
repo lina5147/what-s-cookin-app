@@ -12,9 +12,9 @@ struct IngredientBar: View {
    
     var body: some View {
         TextField("Enter Ingredient", text: $text)
-            .font(Font.custom("ReemKufi-Regular", size: 24))
+            .font(Font.custom("ReemKufi-Regular", size: 20))
             .multilineTextAlignment(TextAlignment.center)
-            .padding(7)
+            .padding(4)
             .background(Color(.lightGray).opacity(0.5))
             .cornerRadius(25)
             .padding(.leading, 8)
