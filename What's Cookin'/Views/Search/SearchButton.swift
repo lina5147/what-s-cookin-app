@@ -11,7 +11,7 @@ struct SearchButton: View {
     var body: some View {
       Text("Search for Recipes")
         .font(Font.custom("ReemKufi-Regular", size: 17))
-        .frame(width: 160, height: 50)
+        .frame(width: 160, height: 45)
         .background(Color.yellow.opacity(0.6))
         .foregroundColor(Color.black)
         .cornerRadius(10)

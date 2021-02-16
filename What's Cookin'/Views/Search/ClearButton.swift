@@ -11,7 +11,7 @@ struct ClearButton: View {
     var body: some View {
       Text("Clear")
           .font(Font.custom("ReemKufi-Regular", size: 17))
-          .frame(width: 160, height: 50)
+          .frame(width: 160, height: 45)
           .foregroundColor(Color.black)
           .border(Color.yellow.opacity(0.6), width: 5)
           .cornerRadius(10)
