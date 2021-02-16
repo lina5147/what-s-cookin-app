@@ -63,7 +63,7 @@ struct SearchResults: View {
               NoResults()
             }else if dailyLimit {
               SpoonacularLimit()
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 635)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 525)
                 .background(Color.white)
                 .cornerRadius(15)
                 .padding(.top, 15.0)
