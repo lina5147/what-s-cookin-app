@@ -11,6 +11,8 @@ I developed this app over the course of three weeks as my capstone project at Ad
 - A user can view the full recipe including the ingredients and instructions.
 - A user can save recipes to favorites. 
 
+Demo: https://youtu.be/c9NOo6QXR8Q
+
 ### Technologies
 
 - Swift / SwiftUI
